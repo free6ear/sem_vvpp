@@ -7,7 +7,7 @@ public class paper_info {
 	private String title;
 	private String author;
 	private Date createDate;
-	private String paperFile;
+	private String path;
 	
 	public int getId() {
 		return id;
@@ -33,10 +33,10 @@ public class paper_info {
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
-	public String getPaperFile() {
-		return paperFile;
+	public String getPath() {
+		return path;
 	}
-	public void setPaperFile(String paperFile) {
-		this.paperFile = paperFile;
+	public void setPath(String path) {
+		this.path = path;
 	}
 }

@@ -1,7 +1,5 @@
 package sem_vvpp.bean;
 
-import java.util.Date;
-
 public class carousel {
 	private int id;
 	private String title;
