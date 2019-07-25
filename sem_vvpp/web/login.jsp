@@ -1,5 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -82,7 +83,7 @@
             filter: alpha(opacity=65);
             -webkit-box-shadow: none;
             box-shadow: none;
-            opacity: 0.8;
+            opacity: 1;
         }/*论文/资讯标签*/
         .btn-group-xs>.btn, .btn-xs {
             padding: 0px 3px;
@@ -160,10 +161,10 @@
                 </div>
             </div>
             <!--Login model-->
-            <div class="col-xs-4 col-xs-offset-1">
+             <div class="col-xs-4 col-xs-offset-1">
                 <div class="row">
                     <div class="col-xs-8 col-xs-offset-2">
-                        <form class="form-horizontal" action="login" method="post">
+                        <form class="form-horizontal" action="login" method="post" style="text-align:center; margin: -35px -100px; transform: translateY(32%)">
                             <span class="heading">用户登录</span>
                             <div class="form-group">
                                 <i class="fa fa-user"></i>
@@ -172,7 +173,10 @@
                             <div class="form-group help">
                                 <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="密　码">
                                 <i class="fa fa-lock"></i>
-                                <a href="#" class="fa fa-question-circle"></a>
+                                <div id = loginErrorMessageDiv>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+                                    <span class="errorMessage"></span>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <div class="main-checkbox">
@@ -194,7 +198,7 @@
                 <table class="table">
                     <thead style="display: table; width: 96.5%">
                         <th><h3 style="color: #cf000f; margin-bottom: -5px; margin-left: -5px"><b>论文/资讯</b></h3></th>
-                        <th style="text-align: right"><a href="./home.html"><img src="./imgs/more_icon.png" style="height: 20px; width:20px;  margin-bottom: -10px; margin-right: -8px;"></a></th>
+                        <th style="text-align: right"><a href="home.jsp"><img src="./imgs/more_icon.png" style="height: 20px; width:20px;  margin-bottom: -10px; margin-right: -8px;"></a></th>
                     </thead>
                     <tbody style="display: table; width: 96.5%">
                         <tr>
@@ -239,5 +243,8 @@
         </div>
     </div>
     <script type="text/javascript" color="214,69,65" opacity='1' zIndex="-2" count="99" src="./js/canvas-nest.js"></script>
+    <script>
+
+    </script>
 </body>
 </html>

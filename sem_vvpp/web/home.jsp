@@ -1,5 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,7 +54,7 @@
                     <img src="./imgs/home_title.png" alt="论文资讯">
                 </div>
                 <div class="col-xs-2">
-                    <a href="./login.html"><img src="./imgs/main_logo.png" style="margin-top: 18px; margin-left: -30px; height: auto; width: 160px;" alt="东南汽车"></a>
+                    <a href="./login.jsp"><img src="./imgs/main_logo.png" style="margin-top: 18px; margin-left: -30px; height: auto; width: 160px;" alt="东南汽车"></a>
                 </div>
             </div>
             

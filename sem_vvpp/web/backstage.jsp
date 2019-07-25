@@ -1,5 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -164,7 +165,7 @@
     <div class="wrapper" style="min-width: 900px">
         <div class="sidebar clearfix" style="position:fixed" data-color="red">
             <div class="logo">
-                <a class="simple-text" href="./backstage.html"><img src="./imgs/back_brand.png" alt="后台管理系统"></a>
+                <a class="simple-text" href="./backstage.jsp"><img src="./imgs/back_brand.png" alt="后台管理系统"></a>
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav" id="tab">
@@ -215,7 +216,7 @@
                             <a>欢迎你， <span class="badge" style="position:initial">admin</span></a>
                         </li>
                         <li>
-                            <a href="./login.html"><span class="glyphicon glyphicon-log-out" style="margin-top: 4px"></span> 注销</a>
+                            <a href="./login.jsp"><span class="glyphicon glyphicon-log-out" style="margin-top: 4px"></span> 注销</a>
                         </li>
                     </ul>
                 </div>
