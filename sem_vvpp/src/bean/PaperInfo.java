@@ -1,4 +1,4 @@
-package sem_vvpp.bean;
+package bean;
 
 import java.util.Date;
 

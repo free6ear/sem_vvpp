@@ -1,10 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-import sem_vvpp.bean.Carousel;
-import sem_vvpp.bean.PaperInfo;
-import sem_vvpp.dao.CarouselDAO;
-import sem_vvpp.dao.PaperInfoDAO;
+import bean.PaperInfo;
+import dao.PaperInfoDAO;
 
 public class TestMain {
 

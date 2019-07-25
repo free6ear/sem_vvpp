@@ -1,4 +1,4 @@
-package sem_vvpp.dao;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import sem_vvpp.bean.PaperInfo;
-import sem_vvpp.util.DBUtil;
-import sem_vvpp.util.DateUtil;
+import bean.PaperInfo;
+import util.DBUtil;
+import util.DateUtil;
 
 public class PaperInfoDAO {
 	
