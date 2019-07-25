@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-
 public class DBUtil {
 	static String ip = "101.132.71.186";
 	static int port = 3306;
