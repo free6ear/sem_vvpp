@@ -78,6 +78,10 @@
             background-color: #96281b;
             color: white;
         }
+        #login-button:active {
+            background-color: #cf000f;
+            color: white;
+        }
 
         .btn.disabled {
             filter: alpha(opacity=65);
@@ -91,6 +95,9 @@
             line-height: 1.5;
             border-radius: 3px;
         }/*论文/资讯标签*/
+        span #login-switch:hover {
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -101,7 +108,7 @@
                 <img src="./imgs/main_logo.png" class="center-vertical" style=" height: 60px; width: auto; margin-left: 30px">
             </div> 
             <div class="col-xs-6" style="text-align: center">
-                <img src="./imgs/CAE_logo_black.png" class="center-vertical" style="margin-top: -10px;">
+                <img src="./imgs/CAE_logo_black.png" class="center-vertical" style="margin-top: -10px; width: 80%">
             </div>
          
         </div>
@@ -164,7 +171,7 @@
              <div class="col-xs-4 col-xs-offset-1">
                 <div class="row">
                     <div class="col-xs-8 col-xs-offset-2">
-                        <form class="form-horizontal" action="login" method="post" style="text-align:center; margin: -35px -100px; transform: translateY(32%)">
+                        <form class="form-horizontal" method="post" action="login" style="text-align:center; margin: -35px -100px; transform: translateY(32%)">
                             <span class="heading">用户登录</span>
                             <div class="form-group">
                                 <i class="fa fa-user"></i>
@@ -173,19 +180,21 @@
                             <div class="form-group help">
                                 <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="密　码">
                                 <i class="fa fa-lock"></i>
-                                <div id = loginErrorMessageDiv>
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
-                                    <span class="errorMessage"></span>
-                                </div>
                             </div>
-                            <div class="form-group">
-                                <div class="main-checkbox">
-                                    <input type="checkbox" value="None" id="checkbox1" name="check"/>
-                                    <label for="checkbox1"></label>
-                                </div>
-                                <span class="text" style="color: gray">内容管理</span>
+                            <div class="pull-right" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">
+                                <font class="errorMessage"></font>
+
+                            </div>
+                            <div class="pull-right" id="loginErrorMessageDiv" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">
+                                ${msg}
+                            </div>
+                            <div class="form-group" id="login-switch">
+                                <a href="#">
+                                    <span class="text"  style="color: rgba(46, 49, 49, 0.8)"><u>我是内容管理员</u></span>
+                                </a>
                                 <button type="submit" id="login-button" class="btn btn-default" style="outline:none">登录</button>
                             </div>
+
                         </form>
                     </div>
                 </div>
@@ -244,6 +253,17 @@
     </div>
     <script type="text/javascript" color="214,69,65" opacity='1' zIndex="-2" count="99" src="./js/canvas-nest.js"></script>
     <script>
+        $("form.form-horizontal").submit(function(){
+            if(0==$("#inputEmail3").val().length||0==$("#inputPassword3").val().length){
+                $("font.errorMessage").html("请输入账号密码");
+                return false;
+            }
+            return true;
+        });
+        $("form.form-horizontal input").keyup(function(){
+            $("div#loginErrorMessageDiv").hide();
+            $("font.errorMessage").empty();
+        });
 
     </script>
 </body>

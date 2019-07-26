@@ -2,7 +2,7 @@ initFileInput();
 function initFileInput() {
     $("#input-paper").fileinput({
         language: 'zh', //设置语言
-        dropZoneTitle: '可以将论文拖放到这里……<br>支持多文件上传',
+        dropZoneTitle: '可以将论文拖放到这里……',
         uploadUrl: "index.php", //上传的地址
         uploadExtraData: function(previewId, index) {   //该插件可以向您的服务器方法发送附加数据。这可以通过uploadExtraData在键值对中设置为关联数组对象来完成。所以如果你有设置uploadExtraData={id:'kv-1'}，在PHP中你可以读取这些数据$_POST['id']
             var id = $('#id').val();
@@ -23,7 +23,7 @@ function initFileInput() {
         maxImageHeight: 1000,//图片的最大高度
         maxFileSize: 0,//单位为kb，如果为0表示不限制文件大小
         minFileCount: 1, //每次上传允许的最少文件数。如果设置为0，则表示文件数是可选的。默认为0
-        maxFileCount: 10, //每次上传允许的最大文件数。如果设置为0，则表示允许的文件数是无限制的。默认为0
+        maxFileCount: 1, //每次上传允许的最大文件数。如果设置为0，则表示允许的文件数是无限制的。默认为0
         previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",//当检测到用于预览的不可读文件类型时，将在每个预览文件缩略图中显示的图标。默认为<i class="glyphicon glyphicon-file"></i>  
         layoutTemplates:{
             actionUpload:'',//去除上传预览缩略图中的上传图片
