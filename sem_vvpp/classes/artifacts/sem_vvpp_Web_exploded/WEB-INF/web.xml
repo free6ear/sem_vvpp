@@ -2,6 +2,17 @@
 <web-app>
 
     <servlet>
+        <display-name>addPaperServlet</display-name>
+        <servlet-name>addPaperServlet</servlet-name>
+        <servlet-class>servlet.addPaperServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>addPaperServlet</servlet-name>
+        <url-pattern>/admin/addPaper</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>servlet.LoginServlet</servlet-class>
         <load-on-startup>10</load-on-startup>
