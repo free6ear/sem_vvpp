@@ -16,10 +16,30 @@ import util.DateUtil;
 public class PaperInfoDAO {
 	
 	public void add(PaperInfo bean) {
-		
-		String sql = "insert into paper_info values(null, ?, ?, ?, ?, ?)";
-		try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
-			
+
+	    String sql1 = "select id from paper_info order by id DESC limit 0,1";
+	    String sql2 = "alter table paper_info auto_increment = ?";
+		String sql3 = "insert into paper_info values(null, ?, ?, ?, ?, ?)";
+
+		try (Connection c = DBUtil.getConnection(); Statement s = c.createStatement();) {
+
+            ResultSet rs = s.executeQuery(sql1);
+
+            int id;
+
+            if (rs.next())
+                id = rs.getInt("id");
+            else
+		        id = 1;
+
+		    PreparedStatement ps = c.prepareStatement(sql2);
+
+		    ps.setInt(1, id);
+
+		    ps.executeUpdate();
+
+		    ps = c.prepareStatement(sql3);
+
 			ps.setString(1, bean.getTitle());
 			ps.setString(2, bean.getAuthor());
 			ps.setTimestamp(3, DateUtil.d2t(bean.getCreateDate()));
@@ -27,10 +47,10 @@ public class PaperInfoDAO {
 			ps.setString(5, bean.getType());
 			ps.execute();
 			
-			ResultSet rs = ps.getGeneratedKeys();
+			rs = ps.getGeneratedKeys();
 			
 			if (rs.next()) {
-				int id = rs.getInt(1);
+				id = rs.getInt(1);
 				bean.setId(id);
 			}
 		} catch (SQLException e) {
@@ -70,16 +90,13 @@ public class PaperInfoDAO {
 		}
 	}
 	
-	public List<PaperInfo> list(int start, int count) {
-		
+	public List<PaperInfo> list() {
+
 		List<PaperInfo> beans = new ArrayList<PaperInfo>();
-		
-		String sql = "select * from paper_info limit ?,?";
+
+		String sql = "select * from paper_info";
 		
 		try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
-			
-			ps.setInt(1, start);
-			ps.setInt(2, count);
 			
 			ResultSet rs = ps.executeQuery();
 			
@@ -102,6 +119,43 @@ public class PaperInfoDAO {
 			}
 		} catch (SQLException e) {
 			
+			e.printStackTrace();
+		}
+		return beans;
+	}
+
+	public List<PaperInfo> list(int start, int count) {
+
+		List<PaperInfo> beans = new ArrayList<PaperInfo>();
+
+		String sql = "select * from paper_info limit ?,?";
+
+		try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
+
+			ps.setInt(1, start);
+			ps.setInt(2, count);
+
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				PaperInfo bean = new PaperInfo();
+				int id = rs.getInt(1);
+				String title = rs.getString("title");
+				String author = rs.getString("author");
+				String path = rs.getString("path");
+				Date createDate = DateUtil.t2d(rs.getTimestamp("create_date"));
+				String type = rs.getString("type");
+
+				bean.setTitle(title);
+				bean.setAuthor(author);
+				bean.setPath(path);
+				bean.setCreateDate(createDate);
+				bean.setId(id);
+				bean.setType(type);
+				beans.add(bean);
+			}
+		} catch (SQLException e) {
+
 			e.printStackTrace();
 		}
 		return beans;

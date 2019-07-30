@@ -1,4 +1,9 @@
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.io.File" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,6 +50,18 @@
         tr td:nth-child(3) {
         text-align:left;
         }
+        a:focus, a:hover {
+            color: #cf000f;
+            text-decoration: none;
+        }
+        a:focus, a:active {
+            color: black;
+            text-decoration: none;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -70,201 +87,33 @@
                         <th class="col-xs-2" style="text-align: center">发布时间</th>
                     </thead>
                     <tbody style="text-align: center; font-weight: 500">
-                        <tr>
-                            <td>
-                                <div id="number_bkg" style="color: white">
-                                    <font>1</font>
-                                </div>
-                            </td>
-                            <td>
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
-                            </td>
-                            <td><font>混合动力车电池托盘的优化设计</font></td>
-                            <td>李志祥</td>
-                            <td>2019.06.05</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="number_bkg" style="color: white">
-                                        <font>2</font>
-                                </div>
-                            </td>
-                            <td>
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
-                            </td>
-                            <td><font>熔模铸造工艺优化分析</font></td>
-                            <td>刘海峰</td>
-                            <td>2019.06.01</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="number_bkg" style="color: white">
-                                        <font>3</font>
-                                </div>
-                            </td>
-                            <td>
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
-                            </td>                            
-                            <td><font>一种新型轿车前舱盖结构优化分析</font></td>
-                            <td>刘小丽</td>
-                            <td>2019.05.30</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="number_bkg" style="color: white">
-                                        <font>4</font>
-                                </div>
-                            </td>
-                            <td>
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
-                            </td>                            
-                            <td><font>弯曲工况下车轮强度疲劳分析方法对比</font></td>
-                            <td>卢晨霞</td>
-                            <td>2019.05.28</td>
-                    </tr>
-                        <tr>
-                            <td>
-                                <div id="number_bkg" style="color: white">
-                                        <font>5</font>
-                                </div>
-                            </td>
-                           <td>
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
-                            </td>                            
-                            <td><font>HyperWorks在某袋天窗顶盖的刚度分析中应用</font></td>
-                            <td>陆志成</td>
-                            <td>2019.05.27</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="number_bkg" style="color: white">
-                                        <font>6</font>
-                                </div>
-                            </td>
-                            <td>
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
-                            </td>                            
-                            <td><font>OptiStruct在白车身焊点优化中的应用</font></td>
-                            <td>罗淼</td>
-                            <td>2019.05.24</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="number_bkg" style="color: white">
-                                        <font>7</font>
-                                </div>
-                            </td>
-                            <td>
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
-                            </td>                            
-                            <td><font>HyperView在方向盘疲劳分析中的应用</font></td>
-                            <td>欧阳海彬</td>
-                            <td>2019.05.24</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="number_bkg" style="color: white">
-                                        <font>8</font>
-                                </div>
-                            </td>
-                            <td>
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
-                            </td>                            
-                            <td><font>Radioss Application in Airbag Simulation</font></td>
-                            <td>欧阳海彬</td>
-                            <td>2019.05.22</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="number_bkg" style="color: white">
-                                    <font>9</font>
-                                </div>
-                            </td>
-                            <td>
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
-                            </td>                            
-                            <td><font>基于HyperWorks的自卸车车架静强度分析</font></td>
-                            <td>屈磊</td>
-                            <td>2019.05.19</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="number_bkg" style="color: white">
-                                        <font>10</font>
-                                </div>
-                            </td>
-                            <td>
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
-                            </td>                            
-                            <td><font>基于HyperWorks的发动机罩盖结构优化设计</font></td>
-                            <td>屈新田</td>
-                            <td>2019.05.15</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="number_bkg" style="color: white">
-                                        <font>11</font>
-                                </div>
-                            </td>
-                            <td>
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
-                            </td>                            
-                            <td><font>驱动电机转子结构优化分析</font></td>
-                            <td>屈新田</td>
-                            <td>2019.05.13</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="number_bkg" style="color: white">
-                                        <font>12</font>
-                                </div>
-                            </td>
-                            <td>
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
-                            </td>                            
-                            <td><font>基于拓扑优化的车身结构研究</font></td>
-                            <td>翟元</td>
-                            <td>2019.05.12</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="number_bkg" style="color: white">
-                                        <font>13</font>
-                                </div>
-                            </td>
-                            <td>
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
-                            </td>                            
-                            <td><font>基于morph功能的HyperForm多序冲压成形应用</font></td>
-                            <td>苪玉龙</td>
-                            <td>2019.05.10</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="number_bkg" style="color: white">
-                                        <font>14</font>
-                                </div>
-                            </td>
-                            <td>
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
-                            </td>                            
-                            <td><font>MotionView在副车间开发中的应用</font></td>
-                            <td>沈福亮</td>
-                            <td>2019.05.08</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="number_bkg" style="color: white">
-                                        <font>15</font>
-                                </div>
-                            </td>
-                            <td>
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
-                            </td>                            
-                            <td><font>基于HyperStudy传动轴减振圈优化设计</font></td>
-                            <td>石朝亮</td>
-                            <td>2019.04.29</td>
-                        </tr>
+                        <c:forEach items="${pis}" var = "pi" varStatus="status">
+                            <tr>
+                                <td>
+                                    <div id="number_bkg" style="color: white">
+                                        <font>${status.index + 1}</font>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">${pi.type}</button>
+                                </td>
+<%--                                <script>--%>
+<%--                                    var tempPath = ${pi.path};--%>
+<%--                                    var arr = tempPath.split("web/");--%>
+<%--                                    var finalPath = arr[arr.length - 1];--%>
+<%--                                </script>--%>
+<%--                                --%>
+                                <%
+                                    String token = "web" + File.separator;
+                                    request.setAttribute("token", token);
+                                %>
+                                <td><a href="./pdfjs/web/viewer.html?file=${fn:substring(pi.path, fn:indexOf(pi.path, token) + 4, fn:length(pi.path))}" target=_blank><font> ${pi.title}</font></a></td>
+                                <td>${pi.author}</td>
+                                <td>
+                                    <fmt:formatDate pattern="yyyy-MM-dd" value="${pi.createDate}" />
+                                </td>
+                            </tr>
+                        </c:forEach>
                     </tbody>
                 </table>
             </div>
@@ -300,5 +149,7 @@
         </div>
     </div>
     <script type="text/javascript" color="214,69,65" opacity='0.8' zIndex="-2" count="99" src="./js/canvas-nest.js"></script>
+    <script src="./pdfjs/build/pdf.js"></script>
+    <script src="./pdfjs/build/pdf.worker.js"></script>
 </body>
 </html>

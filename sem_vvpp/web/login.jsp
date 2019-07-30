@@ -207,7 +207,7 @@
                 <table class="table">
                     <thead style="display: table; width: 96.5%">
                         <th><h3 style="color: #cf000f; margin-bottom: -5px; margin-left: -5px"><b>论文/资讯</b></h3></th>
-                        <th style="text-align: right"><a href="home.jsp"><img src="./imgs/more_icon.png" style="height: 20px; width:20px;  margin-bottom: -10px; margin-right: -8px;"></a></th>
+                        <th style="text-align: right"><a href="/home"><img src="./imgs/more_icon.png" style="height: 20px; width:20px;  margin-bottom: -10px; margin-right: -8px;"></a></th>
                     </thead>
                     <tbody style="display: table; width: 96.5%">
                         <tr>

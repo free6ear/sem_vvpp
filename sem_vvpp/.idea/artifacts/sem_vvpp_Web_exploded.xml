@@ -8,7 +8,7 @@
           <element id="module-output" name="sem_vvpp" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="module" name="mysql-connector-java-5.0.8-bin.jar" module-name="sem_vvpp" />
+          <element id="library" level="project" name="mysql-connector-java-5.0.8-bin" />
         </element>
       </element>
     </root>

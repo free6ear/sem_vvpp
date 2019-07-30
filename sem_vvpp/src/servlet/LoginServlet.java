@@ -23,11 +23,11 @@ public class LoginServlet extends HttpServlet{
 
         if (null == user) {
             request.setAttribute("msg", "账号或密码错误");
-            request.getRequestDispatcher("/login.jsp").forward(request, response);
+            request.getRequestDispatcher("/login").forward(request, response);
             return;
         }
         PrintWriter out = response.getWriter();
         request.getSession().setAttribute("username", username);
-        response.sendRedirect("admin.jsp");
+        response.sendRedirect(request.getContextPath() + "/admin");
     }
 }

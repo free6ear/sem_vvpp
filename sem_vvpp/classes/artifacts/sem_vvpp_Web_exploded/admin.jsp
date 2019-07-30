@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -163,43 +164,43 @@
 </head>
 <body>
     <div class="wrapper" style="min-width: 900px">
-        <div class="sidebar clearfix" style="position:fixed" data-color="red">
+        <div  class="sidebar clearfix" style="position:fixed" data-color="red">
             <div class="logo">
-                <a class="simple-text" href="./admin.jsp"><img src="./imgs/back_brand.png" alt="后台管理系统"></a>
+                <a class="simple-text" href="./admin"><img src="./imgs/back_brand.png" alt="后台管理系统"></a>
             </div>
             <div class="sidebar-wrapper">
-                <ul class="nav" id="tab">
-                    <li class="list">
-                        <a data-toggle="collapse" href="#paperManagement" aria-expanded="false" class="collapsed">
-                            <i class="glyphicon glyphicon-list-alt" style="font-size: 23px"></i>
-                            <p>
-                                <b style="font-size: 21px">论文管理</b>
-                                <b class="caret"></b>
-                            </p>
-                        </a>
-                        <div class="collapse" id="paperManagement" aria-expanded="false">
-                            <ul class="nav">
-                                <li id="paper"><a href="#/editPaper" style="font-size: 18px">编辑论文</a></li>
-                                <li id="addPaper"><a href="#/paper" style="font-size: 18px">新增论文</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="list">
-                        <a data-toggle="collapse" href="#carouselManagement" aria-expanded="false" class="collapsed">
-                            <i class="glyphicon glyphicon-picture" style="font-size: 23px"></i>
-                            <p>
-                                <b style="font-size: 20px">轮播图管理</b>
-                                <b class="caret"></b>
-                            </p>
-                        </a>
-                        <div class="collapse" id="carouselManagement" aria-expanded="false">
-                            <ul class="nav">
-                                <li id="carousel"><a href="#/editCarousel" style="font-size: 18px">编辑轮播图</a></li>
-                                <li id="addCarousel"><a href="#/carousel" style="font-size: 18px">新增轮播图</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
+                    <ul class="nav" id="tab">
+                        <li class="list">
+                            <a data-toggle="collapse" href="#paperManagement" aria-expanded="false" class="collapsed">
+                                <i class="glyphicon glyphicon-list-alt" style="font-size: 23px"></i>
+                                <p>
+                                    <b style="font-size: 21px">论文资讯</b>
+                                    <b class="caret"></b>
+                                </p>
+                            </a>
+                            <div class="collapse" id="paperManagement" aria-expanded="false">
+                                <ul class="nav">
+                                    <li id="paper"><a href="#/edit" style="font-size: 18px">编辑</a></li>
+                                    <li id="addPaper"><a href="#/add" style="font-size: 18px">新增</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list">
+                            <a data-toggle="collapse" href="#carouselManagement" aria-expanded="false" class="collapsed">
+                                <i class="glyphicon glyphicon-picture" style="font-size: 23px"></i>
+                                <p>
+                                    <b style="font-size: 20px">轮播图</b>
+                                    <b class="caret"></b>
+                                </p>
+                            </a>
+                            <div class="collapse" id="carouselManagement" aria-expanded="false">
+                                <ul class="nav">
+                                    <li id="carousel"><a href="#management_carousel" style="font-size: 18px">轮播图管理</a></li>
+                                    <li id="addCarousel"><a href="#/add-carousel" style="font-size: 18px">新增轮播图</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
             </div>
             <div class="sidebar-background"></div>
         </div>
@@ -224,7 +225,7 @@
             </nav>
             <div class="row">
                 <div class="tab-content">
-                    <!--编辑论文-->
+                    <!--论文资讯管理-->
                     <div class="col-xs-12" id="editPaperContent">
                         <table class="table table-hover" style="margin-top: -17px; margin-bottom: 12px">
                             <thead class="row" style="color: #cf000f; margin-top: 20px; margin-bottom: -10px">
@@ -234,24 +235,26 @@
                                 <th class="col-xs-2" style="text-align: center">操作</th>
                             </thead>
                             <tbody style="text-align: center; font-weight: 600">
-                                <tr>
-                                    <td>
-                                        <div id="number_bkg" style="color: white">
-                                            <font>1</font>
-                                        </div>
-                                    </td>
-                                    <td><font>混合动力车电池托盘的优化设计</font></td>
-                                    <td>李志祥</td>
-                                    <td>
-                                        <a href="#/editPaper" >
-                                            <i class="glyphicon glyphicon-edit"></i>
-                                        </a>
-                                        &nbsp;
-                                        <a href="#deletePaper">
-                                            <i class="glyphicon glyphicon-trash"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                                <c:forEach items="${pis}" var = "pi" varStatus="status">
+                                    <tr>
+                                        <td>
+                                            <div id="number_bkg" style="color: white">
+                                                <font>${status.index + 1}</font>
+                                            </div>
+                                        </td>
+                                        <td><font>${pi.title}</font></td>
+                                        <td>${pi.author}</td>
+                                        <td>
+                                            <a href="admin/editPaperOrInfo?id=${pi.id}">
+                                                <i class="glyphicon glyphicon-edit"></i>
+                                            </a>
+                                            &nbsp;
+                                            <a href="admin/deletePaperOrInfo?id=${pi.id}">
+                                                <i class="glyphicon glyphicon-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                         <!--底部分页-->
@@ -286,21 +289,31 @@
                         </div>
                     </div>
                     <!--新增论文-->
-                    <div class="col-xs-offset-3 col-xs-6" id="addPaperContent" style="margin-top: 5px">
-                        <form role="form" method="post" style="font-size: 18px" action="/admin/addPaper" enctype="multipart/form-data">
+                    <div class="col-xs-offset-4 col-xs-4" id="addPaperContent" style="margin-top: 5px">
+                        <form role="form" method="post" style="font-size: 18px" action="/admin/addPaperOrInfo" enctype="multipart/form-data">
                             <div class="form-group">
                                 <!-- <i class="glyphicon glyphicon-list-alt" style="color: grey; font-size: 25px"></i> -->
-                                <label>论文标题：</label>
-                                <input type="text" class="form-control" id="paperTitle" name="title" placeholder="请输入论文标题">
+                                <label>标题：</label>
+                                <input type="text" class="form-control" name="paperOrInfoTitle" placeholder="请输入论文标题">
                             </div>
                             <div class="form-group">
                                 <!-- <i class="glyphicon glyphicon-user" style="color: grey; font-size: 25px"></i> -->
-                                <label>论文作者：</label>
-                                <input type="text" class="form-control" id="paperAuthor" name="author" placeholder="请输入论文作者">
+                                <label>作者：</label>
+                                <input type="text" class="form-control" name="paperOrInfoAuthor" placeholder="请输入论文作者">
                             </div>
-                            <div class="form-group">
-                                <label>论文文件：</label>
-                                <input id="input-paper" name="paperFile" type="file" data-show-caption="true">
+                            <label>类型：</label>
+                            <select class="form-control" name="paperOrInfoType">
+                                <option>论文</option>
+                                <option>资讯</option>
+                            </select>
+<%--                            <div class="dropdown">--%>
+<%--                                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">--%>
+<%--                                类型--%>
+<%--                                </button>--%>
+<%--                            </div>--%>
+                            <div class="form-group" style="margin-top: 15px">
+                                <label>文件：</label>
+                                <input id="input-paper" name="paperOrInfoFile" type="file" data-show-caption="true">
                             </div>
                             <button class="btn btn-danger pull-right" type="submit">上传</button>
                         </form>     
@@ -310,11 +323,11 @@
                         <form role="form"  style="font-size: 18px">
                             <div class="form-group">
                                 <!-- <i class="glyphicon glyphicon-list-alt" style="color: grey; font-size: 25px"></i> -->
-                                <label for="name">图片标题：</label>
+                                <label>图片标题：</label>
                                 <input type="text" class="form-control" id="carouselTitle" placeholder="请输入轮播图标题">
                             </div>
                             <div class="form-group">
-                                <label for="inputfile">选择图片：</label>
+                                <label>选择图片：</label>
                                 <input id="input-carousel" name="CarouselPic" multiple type="file" data-show-caption="true">
                             </div>
                         </form>      
@@ -331,7 +344,7 @@
                                             <i class="glyphicon glyphicon-edit"></i>
                                         </a>
                                         &nbsp;
-                                        <a href="#deleteCarousel" id="delete">
+                                        <a href="#/deleteCarousel" id="delete">
                                             <i class="glyphicon glyphicon-trash"></i>
                                         </a>
                                     </td>
@@ -349,23 +362,26 @@
     <script type="text/javascript" src="js/fileinput.min.js"></script>
     <script type="text/javascript" src="js/zh.js"></script>
     <script>
-        $('#editPaperContent').show().siblings().hide()
+        $('#editPaperContent').show().siblings().hide();
 
         $('#paper').click(function () {
             $('#editPaperContent').show().siblings().hide()
-        })
+        });
 
         $('#addPaper').click(function () {
             $('#addPaperContent').show().siblings().hide()
-        })
+        });
 
         $('#addCarousel').click(function () {
             $('#addCarouselContent').show().siblings().hide()
-        })
-
+        });
 
         $('#carousel').click(function () {
             $('#editCarouselContent').show().siblings().hide()
+        });
+
+        $(".form-control").on("click", "option", function () {
+
         })
 
     </script>
