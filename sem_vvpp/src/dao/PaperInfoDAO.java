@@ -15,6 +15,24 @@ import util.DateUtil;
 
 public class PaperInfoDAO {
 
+	public int getTotal() {
+		int total = 0;
+
+		try (Connection c = DBUtil.getConnection(); Statement s = c.createStatement();) {
+
+			String sql = "select count(*) from paper_info";
+
+			ResultSet rs = s.executeQuery(sql);
+
+			while (rs.next()) {
+				total = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return total;
+	}
+
     public static PaperInfo get(int id) {
 
 		PaperInfo bean = new PaperInfo();
@@ -102,40 +120,6 @@ public class PaperInfoDAO {
 			
 			e.printStackTrace();
 		}
-	}
-	
-	public List<PaperInfo> list() {
-
-		List<PaperInfo> beans = new ArrayList<PaperInfo>();
-
-		String sql = "select * from paper_info";
-		
-		try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
-			
-			ResultSet rs = ps.executeQuery();
-			
-			while (rs.next()) {
-				PaperInfo bean = new PaperInfo();
-				int id = rs.getInt(1);
-				String title = rs.getString("title");
-				String author = rs.getString("author");
-				String path = rs.getString("path");
-				Date createDate = DateUtil.t2d(rs.getTimestamp("create_date"));
-				String type = rs.getString("type");
-				
-				bean.setTitle(title);
-				bean.setAuthor(author);
-				bean.setPath(path);
-				bean.setCreateDate(createDate);
-				bean.setId(id);
-				bean.setType(type);
-				beans.add(bean);
-			}
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-		}
-		return beans;
 	}
 
 	public List<PaperInfo> list(int start, int count) {

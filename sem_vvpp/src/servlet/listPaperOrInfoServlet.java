@@ -20,7 +20,7 @@ public class listPaperOrInfoServlet extends HttpServlet {
             throws ServletException, IOException {
 
         PaperInfoDAO paperInfoDAO = new PaperInfoDAO();
-        List<PaperInfo> pis = paperInfoDAO.list();
+        List<PaperInfo> pis = paperInfoDAO.list(1, 15);
 
         request.setAttribute("pis", pis);
 //        request.setAttribute("page", page);

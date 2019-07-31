@@ -82,8 +82,8 @@
                     <thead class="row" style="color: #cf000f; margin-top: 20px">
                         <th class="col-xs-1" style="text-align: center">序号</th>
                         <th class="col-xs-1" style="text-align: center">类型</th>
-                        <th class="col-xs-6" style="text-align: center">标题</th>
-                        <th class="col-xs-2" style="text-align: center">作者</th>
+                        <th class="col-xs-7" style="text-align: center">标题</th>
+                        <th class="col-xs-1" style="text-align: center">作者</th>
                         <th class="col-xs-2" style="text-align: center">发布时间</th>
                     </thead>
                     <tbody style="text-align: center; font-weight: 500">
@@ -125,18 +125,23 @@
                         <div class="col-md-12">
                             <nav class="pagination-outer" aria-label="Page navigation">
                                 <ul class="pagination">
-                                    <li class="page-item">
-                                        <a href="#" class="page-link" aria-label="Previous">
+                                    <li class="page-item" <c:if test="${!page.hasPreviouse}">class="disabled"</c:if>>
+                                        <a href="?page.start=${page.start-page.count}" class="page-link" aria-label="Previous">
                                             <span aria-hidden="true"><b><</b></span>
                                         </a>
                                     </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item active"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                    <li class="page-item">
-                                        <a href="#" class="page-link" aria-label="Next">
+
+                                    <c:forEach begin="0" end="${page.totalPage-1}" varStatus="status">
+
+                                            <li class="page-item" <c:if test="${status.index*page.count==page.start}">class="disabled"</c:if>>
+                                                <a class="page-link"
+                                                    href="?page.start=${status.index*page.count}"
+                                                    <c:if test="${status.index*page.count==page.start}">class="current"</c:if>
+                                                    >${status.count}</a>
+                                            </li>
+                                    </c:forEach>
+                                    <li class="page-item" <c:if test="${!page.hasNext}">class="disabled"</c:if>>
+                                        <a href="?page.start+page.count" class="page-link" aria-label="Next">
                                             <span aria-hidden="true"><b>></b></span>
                                         </a>
                                     </li>
@@ -151,5 +156,10 @@
     <script type="text/javascript" color="214,69,65" opacity='0.8' zIndex="-2" count="99" src="./js/canvas-nest.js"></script>
     <script src="./pdfjs/build/pdf.js"></script>
     <script src="./pdfjs/build/pdf.worker.js"></script>
+    <script>
+        $(function() {
+            $("ul.pagination li.disabled a").removeAttr('href');
+        });
+    </script>
 </body>
 </html>

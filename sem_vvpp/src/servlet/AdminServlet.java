@@ -18,7 +18,7 @@ public class AdminServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         PaperInfoDAO paperInfoDAO = new PaperInfoDAO();
-        List<PaperInfo> pis = paperInfoDAO.list();
+        List<PaperInfo> pis = paperInfoDAO.list(1, 15);
 
         req.setAttribute("pis", pis);
 
