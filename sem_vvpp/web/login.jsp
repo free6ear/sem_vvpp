@@ -98,6 +98,13 @@
         span #login-switch:hover {
             color: black;
         }
+
+        .form-control:focus {
+            border-color: #f1a9a0;
+        }
+        #login-switch-button:hover {
+            color: #cf000f;
+        }
     </style>
 </head>
 <body>
@@ -190,7 +197,7 @@
                             </div>
                             <div class="form-group" id="login-switch">
                                 <a href="#">
-                                    <span class="text"  style="color: rgba(46, 49, 49, 0.8)"><u>我是内容管理员</u></span>
+                                    <span class="text" id="login-switch-button" style="color: rgba(46, 49, 49, 0.8)"><u>我是内容管理员</u></span>
                                 </a>
                                 <button type="submit" id="login-button" class="btn btn-default" style="outline:none">登录</button>
                             </div>

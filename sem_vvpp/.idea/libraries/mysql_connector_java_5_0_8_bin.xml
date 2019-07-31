@@ -9,6 +9,7 @@
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/commons-io-1.4.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/taglibs-standard-impl-1.2.5.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/taglibs-standard-spec-1.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/fastjson-1.2.7.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -16,6 +16,19 @@
     <title>后台管理系统</title>
     <link rel="stylesheet" href="./imgs/back_icon.png"/>
     <style>
+        .form-control:focus {
+            border-color: #f1a9a0;
+        }
+
+        .sidebar .sidebar-wrapper>.nav li>a:hover {
+            opacity: 1;
+            color: #cf000f;
+        }
+
+        .sidebar .sidebar-wrapper>.nav li>a:focus {
+            opacity: 1;
+            color: #cf000f;
+        }
         body {
             font-size: 22px;
         }
@@ -62,7 +75,6 @@
             background-color: rgba(251, 64, 75, 0.8);
             /*background-color: #FFF;*/
             color: rgba(251, 64, 75, 0.8);
-            border-radius: none;
         }
 
         .card-wizard .nav-pills.main>li>a {
@@ -103,6 +115,13 @@
         .off-canvas-sidebar .sidebar-wrapper>.nav li.active>a:hover {
             color: #f5f5f5;
             font-weight: 600;
+        }
+
+        .btn.disabled {
+            filter: alpha(opacity=65);
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            opacity: 1;
         }
 
         .dropdown-menu>li>a:focus,
@@ -154,9 +173,11 @@
             text-align: center;
             vertical-align: middle!important;
         }
-        tr td:nth-child(2) {
-        text-align:left;
+
+        tr td:nth-child(3) {
+            text-align:left;
         }
+
         .table>tbody>tr>td {
             border-top: 2px solid #ddd;
         }
@@ -230,7 +251,8 @@
                         <table class="table table-hover" style="margin-top: -17px; margin-bottom: 12px">
                             <thead class="row" style="color: #cf000f; margin-top: 20px; margin-bottom: -10px">
                                 <th class="col-xs-1" style="text-align: center">序号</th>
-                                <th class="col-xs-7" style="text-align: center">标题</th>
+                                <th class="col-xs-1" style="text-align: center">类型</th>
+                                <th class="col-xs-6" style="text-align: center">标题</th>
                                 <th class="col-xs-2" style="text-align: center">作者</th>
                                 <th class="col-xs-2" style="text-align: center">操作</th>
                             </thead>
@@ -242,10 +264,13 @@
                                                 <font>${status.index + 1}</font>
                                             </div>
                                         </td>
+                                        <td>
+                                            <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px; text-align: center">${pi.type}</button>
+                                        </td>
                                         <td><font>${pi.title}</font></td>
                                         <td>${pi.author}</td>
                                         <td>
-                                            <a href="admin/editPaperOrInfo?id=${pi.id}">
+                                            <a onclick="editPaperInfo(${pi.id})" data-toggle="modal" data-target="#editPaperInfoModal">
                                                 <i class="glyphicon glyphicon-edit"></i>
                                             </a>
                                             &nbsp;
@@ -289,17 +314,17 @@
                         </div>
                     </div>
                     <!--新增论文-->
-                    <div class="col-xs-offset-4 col-xs-4" id="addPaperContent" style="margin-top: 5px">
+                    <div class="col-xs-offset-4 col-xs-4" id="addPaperContent" style="margin-top: 5px; display: none">
                         <form role="form" method="post" style="font-size: 18px" action="/admin/addPaperOrInfo" enctype="multipart/form-data">
                             <div class="form-group">
                                 <!-- <i class="glyphicon glyphicon-list-alt" style="color: grey; font-size: 25px"></i> -->
                                 <label>标题：</label>
-                                <input type="text" class="form-control" name="paperOrInfoTitle" placeholder="请输入论文标题">
+                                <input type="text" class="form-control" name="paperOrInfoTitle" placeholder="请输入标题">
                             </div>
                             <div class="form-group">
                                 <!-- <i class="glyphicon glyphicon-user" style="color: grey; font-size: 25px"></i> -->
                                 <label>作者：</label>
-                                <input type="text" class="form-control" name="paperOrInfoAuthor" placeholder="请输入论文作者">
+                                <input type="text" class="form-control" name="paperOrInfoAuthor" placeholder="请输入作者">
                             </div>
                             <label>类型：</label>
                             <select class="form-control" name="paperOrInfoType">
@@ -319,7 +344,7 @@
                         </form>     
                     </div>
                     <!--新增轮播图-->
-                    <div class="col-xs-offset-4 col-xs-4" id="addCarouselContent" style="margin-top: 5px">
+                    <div class="col-xs-offset-4 col-xs-4" id="addCarouselContent" style="margin-top: 5px; display: none">
                         <form role="form"  style="font-size: 18px">
                             <div class="form-group">
                                 <!-- <i class="glyphicon glyphicon-list-alt" style="color: grey; font-size: 25px"></i> -->
@@ -333,7 +358,7 @@
                         </form>      
                     </div>
                     <!--编辑轮播图-->
-                    <div class="col-xs-12" id="editCarouselContent">
+                    <div class="col-xs-12" id="editCarouselContent" style="display: none">
                         <table class="table table-hover" style="margin-top: -17px; margin-bottom: 12px">
                             <tbody style="margin-top: -5px">
                                 <tr>
@@ -354,15 +379,48 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editPaperInfoModal" tabindex="-1" role="dialog" aria-labelledby="editPaperInfoModalTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form method="get" action="/admin/updatePaperOrInfo">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="editPaperInfoModalTitle" style="text-align: center; font-weight: bolder">编辑论文资讯</h3>
+                    </div>
+                    <div class="modal-body">
+
+                            <input id="paper-info-id" type="hidden" name="paper-info-id">
+                            <div class="form-group">
+                                <label for="paper-info-title" class="col-form-label" style="font-size: large">标题：</label>
+                                <input type="text" class="form-control" name="paper-info-title" id="paper-info-title">
+                            </div>
+                            <div class="form-group">
+                                <label for="paper-info-author" class="col-form-label" style="font-size: large">作者：</label>
+                                <input type="text" class="form-control" name="paper-info-author" id="paper-info-author">
+                            </div>
+                            <label>类型：</label>
+                            <select class="form-control" name="paper-info-type" id="typeSelector">
+                                <option value="论文">论文</option>
+                                <option value="资讯">资讯</option>
+                            </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                        <button type="submit" class="btn btn-danger" onclick="updatePaperInfo()">保存</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
     <script src="./js/bootstrap/3.3.6/bootstrap.min.js"></script>
-    <script src="./bootstrap-fileinput-master/js/fileinput.js"></script>
-    <script src="./bootstrap-fileinput-master/js/locales/zh.js"></script>
+<%--    <script src="./bootstrap-fileinput-master/js/fileinput.js"></script>--%>
+<%--    <script src="./bootstrap-fileinput-master/js/locales/zh.js"></script>--%>
     <script src="./js/app.js"></script>
-    <script type="text/javascript" src="js/fileinput.min.js"></script>
-    <script type="text/javascript" src="js/zh.js"></script>
+<%--    <script type="text/javascript" src="js/fileinput.min.js"></script>--%>
+<%--    <script type="text/javascript" src="js/zh.js"></script>--%>
     <script>
-        $('#editPaperContent').show().siblings().hide();
+        // $('#editPaperContent').show().siblings().hide();
 
         $('#paper').click(function () {
             $('#editPaperContent').show().siblings().hide()
@@ -382,8 +440,26 @@
 
         $(".form-control").on("click", "option", function () {
 
-        })
+        });
+        function editPaperInfo(id) {
+            $.ajax({url:"/admin/editPaperOrInfo?id=" + id, method:"get", contentType:"application/json", success:function (result) {
+                    $('#paper-info-id').val(result.id);
+                    $('#paper-info-title').val(result.title);
+                    $('#paper-info-author').val(result.author);
+                    if (result.type == "论文") {
+                        $("#typeSelector option[value='论文']").attr('selected', true);
+                        $("#typeSelector option[value='资讯']").attr('selected', false);
+                    }
+                    else {
+                        $("#typeSelector option[value='论文']").attr('selected', true);
+                        $("#typeSelector option[value='资讯']").attr('selected', false);
+                    }
+                }});
+        }
+        function updatePaperInfo() {
+            $('#editPaperInfoModal').modal('hide');
 
+        }
     </script>
 </body>
 </html>

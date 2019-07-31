@@ -14,31 +14,47 @@ import util.DBUtil;
 import util.DateUtil;
 
 public class PaperInfoDAO {
-	
-	public void add(PaperInfo bean) {
 
-	    String sql1 = "select id from paper_info order by id DESC limit 0,1";
-	    String sql2 = "alter table paper_info auto_increment = ?";
-		String sql3 = "insert into paper_info values(null, ?, ?, ?, ?, ?)";
+    public static PaperInfo get(int id) {
 
-		try (Connection c = DBUtil.getConnection(); Statement s = c.createStatement();) {
+		PaperInfo bean = new PaperInfo();
 
-            ResultSet rs = s.executeQuery(sql1);
+		String sql = "select * from paper_info where id = ?";
 
-            int id;
+		try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
 
-            if (rs.next())
-                id = rs.getInt("id");
-            else
-		        id = 1;
+			ps.setInt(1, id);
 
-		    PreparedStatement ps = c.prepareStatement(sql2);
+			ResultSet rs = ps.executeQuery();
 
-		    ps.setInt(1, id);
+			while (rs.next()) {
 
-		    ps.executeUpdate();
+				id = rs.getInt(1);
+				String title = rs.getString("title");
+				String author = rs.getString("author");
+				String path = rs.getString("path");
+				Date createDate = DateUtil.t2d(rs.getTimestamp("create_date"));
+				String type = rs.getString("type");
 
-		    ps = c.prepareStatement(sql3);
+				bean.setTitle(title);
+				bean.setAuthor(author);
+				bean.setPath(path);
+				bean.setCreateDate(createDate);
+				bean.setId(id);
+				bean.setType(type);
+			}
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+		return bean;
+    }
+
+    public void add(PaperInfo bean) {
+
+		String sql = "insert into paper_info values(null, ?, ?, ?, ?, ?)";
+
+		try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
 
 			ps.setString(1, bean.getTitle());
 			ps.setString(2, bean.getAuthor());
@@ -47,10 +63,10 @@ public class PaperInfoDAO {
 			ps.setString(5, bean.getType());
 			ps.execute();
 			
-			rs = ps.getGeneratedKeys();
+			ResultSet rs = ps.getGeneratedKeys();
 			
 			if (rs.next()) {
-				id = rs.getInt(1);
+				int id = rs.getInt(1);
 				bean.setId(id);
 			}
 		} catch (SQLException e) {
@@ -58,19 +74,17 @@ public class PaperInfoDAO {
 			e.printStackTrace();
 		}
 	}
-	
-	public void update(PaperInfo bean) {
-		
-		String sql = "update paper_info set title = ?, author = ?, path = ?, type = ? where id = ?";
+	public static void update(PaperInfo bean) {
+
+		String sql = "update paper_info set title = ?, author = ?, type = ? where id = ?";
 		try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
-			
+
 			ps.setString(1, bean.getTitle());
 			ps.setString(2, bean.getAuthor());
-			ps.setString(3, bean.getPath());
-			ps.setString(4, bean.getType());
-			ps.setInt(5, bean.getId());
+			ps.setString(3, bean.getType());
+			ps.setInt(4, bean.getId());
 			ps.execute();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
