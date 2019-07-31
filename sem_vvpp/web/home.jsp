@@ -68,7 +68,7 @@
     <div class="container-fluid" style="min-width: 1220px">
             <div class="row clearfix" style="height: 100px; margin-top: 17px">
                 <div class="col-xs-8 col-xs-offset-2" style="text-align: center; margin-top: 17px">
-                    <img src="./imgs/home_title.png" alt="论文资讯">
+                    <img src="./imgs/home_title.png" alt="论文资讯" style="margin-right: -50px">
                 </div>
                 <div class="col-xs-2">
                     <a href="./login.jsp"><img src="./imgs/main_logo.png" style="margin-top: 18px; margin-left: -30px; height: auto; width: 160px;" alt="东南汽车"></a>
