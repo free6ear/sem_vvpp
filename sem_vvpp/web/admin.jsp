@@ -16,6 +16,27 @@
     <title>后台管理系统</title>
     <link rel="stylesheet" href="./imgs/back_icon.png"/>
     <style>
+        .modal-body {
+            position: relative;
+            padding: 15px 40px;
+        }
+        .pagination {
+            display: inline-block;
+            padding-left: 0;
+            margin: 34px 0;
+            border-radius: 4px;
+        }
+        .pagination>li>a, .pagination>li>span {
+            position: relative;
+            float: left;
+            padding: 6px 0px;
+            margin-left: -1px;
+            line-height: 1.42857143;
+            color: #337ab7;
+            text-decoration: none;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
         .form-control:focus {
             border-color: #f1a9a0;
         }
@@ -29,6 +50,7 @@
             opacity: 1;
             color: #cf000f;
         }
+
         body {
             font-size: 22px;
         }
@@ -201,8 +223,8 @@
                             </a>
                             <div class="collapse" id="paperManagement" aria-expanded="false">
                                 <ul class="nav">
-                                    <li id="paper"><a href="#/edit" style="font-size: 18px">编辑</a></li>
-                                    <li id="addPaper"><a href="#/add" style="font-size: 18px">新增</a></li>
+                                    <li id="paper"><a href="#/paper" style="font-size: 18px">编辑</a></li>
+                                    <li id="addPaper"><a href="#/addPaper" style="font-size: 18px">新增</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -216,8 +238,8 @@
                             </a>
                             <div class="collapse" id="carouselManagement" aria-expanded="false">
                                 <ul class="nav">
-                                    <li id="carousel"><a href="#management_carousel" style="font-size: 18px">轮播图管理</a></li>
-                                    <li id="addCarousel"><a href="#/add-carousel" style="font-size: 18px">新增轮播图</a></li>
+                                    <li id="carousel"><a href="#/carousel" style="font-size: 18px">轮播图管理</a></li>
+                                    <li id="addCarousel"><a href="#/addCarousel" style="font-size: 18px">新增轮播图</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -247,8 +269,8 @@
             <div class="row">
                 <div class="tab-content">
                     <!--论文资讯管理-->
-                    <div class="col-xs-12" id="editPaperContent">
-                        <table class="table table-hover" style="margin-top: -17px; margin-bottom: 12px">
+                    <div class="col-xs-12" id="editPaperContent"  style="height: 600px">
+                        <table class="table table-hover" style="margin-top: -17px; margin-bottom: 12px" >
                             <thead class="row" style="color: #cf000f; margin-top: 20px; margin-bottom: -10px">
                                 <th class="col-xs-1" style="text-align: center">序号</th>
                                 <th class="col-xs-1" style="text-align: center">类型</th>
@@ -274,7 +296,7 @@
                                                 <i class="glyphicon glyphicon-edit"></i>
                                             </a>
                                             &nbsp;
-                                            <a href="admin/deletePaperOrInfo?id=${pi.id}">
+                                            <a onclick="getPaperInfoId(${pi.id})" data-toggle="modal" data-target="#deletePaperInfoModal">
                                                 <i class="glyphicon glyphicon-trash"></i>
                                             </a>
                                         </td>
@@ -290,19 +312,43 @@
                                         <div class="col-md-12">
                                             <nav class="pagination-outer" aria-label="Page navigation">
                                                 <ul class="pagination">
-                                                    <li class="page-item">
-                                                        <a href="#" class="page-link" aria-label="Previous">
+
+                                                    <!--首页-->
+                                                    <li <c:if test="${!page.hasPreviouse}">class="disabled"</c:if>>
+                                                        <a class="page-link" href="?page.start=0" aria-label="Previous" >
+                                                            <span aria-hidden="true"><b><<</b></span>
+                                                        </a>
+                                                    </li>
+
+                                                    <!--上一页-->
+                                                    <li <c:if test="${!page.hasPreviouse}">class="disabled"</c:if>>
+                                                        <a class="page-link" href="?page.start=${page.start-page.count}" aria-label="Previous">
                                                             <span aria-hidden="true"><b><</b></span>
                                                         </a>
                                                     </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item active"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                                    <li class="page-item">
-                                                        <a href="#" class="page-link" aria-label="Next">
+
+                                                    <!--中间页-->
+                                                    <c:forEach begin="0" end="${page.totalPage-1}" varStatus="status">
+                                                        <c:if test="${status.count*page.count-page.start<60 && status.count*page.count-page.start>=-30}">
+                                                            <li <c:if test="${status.index*page.count==page.start}">class="disabled active"</c:if>>
+                                                                <a class="page-link"
+                                                                   href="?page.start=${status.index*page.count}"
+                                                                >${status.count}</a>
+                                                            </li>
+                                                        </c:if>
+                                                    </c:forEach>
+
+                                                    <!--下一页-->
+                                                    <li <c:if test="${!page.hasNext}">class="disabled"</c:if>>
+                                                        <a href="?page.start=${page.start+page.count}" class="page-link" aria-label="Next">
                                                             <span aria-hidden="true"><b>></b></span>
+                                                        </a>
+                                                    </li>
+
+                                                    <!--尾页-->
+                                                    <li <c:if test="${!page.hasNext}">class="disabled"</c:if>>
+                                                        <a href="?page.start=${page.last}" class="page-link" aria-label="Next">
+                                                            <span aria-hidden="true"><b>>></b></span>
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -345,35 +391,38 @@
                     </div>
                     <!--新增轮播图-->
                     <div class="col-xs-offset-4 col-xs-4" id="addCarouselContent" style="margin-top: 5px; display: none">
-                        <form role="form"  style="font-size: 18px">
+                        <form role="form" method="post" style="font-size: 18px" action="/admin/add-carousel" enctype="multipart/form-data">
                             <div class="form-group">
                                 <!-- <i class="glyphicon glyphicon-list-alt" style="color: grey; font-size: 25px"></i> -->
                                 <label>图片标题：</label>
-                                <input type="text" class="form-control" id="carouselTitle" placeholder="请输入轮播图标题">
+                                <input type="text" class="form-control" id="carouselTitle" name="carouselTitle" placeholder="请输入轮播图标题">
                             </div>
                             <div class="form-group">
                                 <label>选择图片：</label>
-                                <input id="input-carousel" name="CarouselPic" multiple type="file" data-show-caption="true">
+                                <input id="input-carousel" name="carouselFile" multiple type="file" data-show-caption="true">
                             </div>
+                            <button class="btn btn-danger pull-right" type="submit">上传</button>
                         </form>      
                     </div>
                     <!--编辑轮播图-->
                     <div class="col-xs-12" id="editCarouselContent" style="display: none">
                         <table class="table table-hover" style="margin-top: -17px; margin-bottom: 12px">
                             <tbody style="margin-top: -5px">
+                            <c:forEach items="${cs}" var = "c" varStatus="status">
                                 <tr>
-                                    <td><img src="./imgs/carousel_pic1.jpg" width="120px"></td>
-                                    <td>电动福建&nbsp;美丽八闽&nbsp;&nbsp;东南汽车积极响应政府新能源号召</td>
+                                    <td><img src="${c.path}" width="120px"></td>
+                                    <td>${c.title}</td>
                                     <td>
-                                        <a href="#/editCarousel" id="edit">
+                                        <a onclick="editCarousel(${c.id})" data-toggle="modal" data-target="#editCarouselModal">
                                             <i class="glyphicon glyphicon-edit"></i>
                                         </a>
                                         &nbsp;
-                                        <a href="#/deleteCarousel" id="delete">
+                                        <a onclick="getCarouselId(${c.id})" data-toggle="modal" data-target="#deleteCarouselModal">
                                             <i class="glyphicon glyphicon-trash"></i>
                                         </a>
                                     </td>
                                 </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </div>
@@ -413,6 +462,22 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="deletePaperInfoModal" tabindex="-1" role="dialog" aria-labelledby="deletePaperInfoModalTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form method="get" action="/admin/deletePaperOrInfo">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="deletePaperInfoModalTitle" style="text-align: center; font-weight: bolder">确定要删除该条内容吗？</h3>
+                        <input id="paper-info-delete-id" type="hidden" name="paper-info-delete-id">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-danger" onclick="deletePaperInfo()">确定</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <script src="./js/bootstrap/3.3.6/bootstrap.min.js"></script>
 <%--    <script src="./bootstrap-fileinput-master/js/fileinput.js"></script>--%>
 <%--    <script src="./bootstrap-fileinput-master/js/locales/zh.js"></script>--%>
@@ -441,6 +506,14 @@
         $(".form-control").on("click", "option", function () {
 
         });
+        $(function(){
+            $("ul.pagination li.disabled a").click(function(){
+                return false;
+            });
+        });
+        $(function() {
+            $("ul.pagination li.disabled a").removeAttr('href');
+        });
         function editPaperInfo(id) {
             $.ajax({url:"/admin/editPaperOrInfo?id=" + id, method:"get", contentType:"application/json", success:function (result) {
                     $('#paper-info-id').val(result.id);
@@ -456,8 +529,16 @@
                     }
                 }});
         }
+
         function updatePaperInfo() {
             $('#editPaperInfoModal').modal('hide');
+
+        }
+        function getPaperInfoId(id) {
+            $('#paper-info-delete-id').val(id);
+        }
+        function deletePaperInfo() {
+            $('#deletePaperInfoModal').modal('hide');
 
         }
     </script>
