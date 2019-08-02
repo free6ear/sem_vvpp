@@ -23,11 +23,12 @@ public class homeServlet extends HttpServlet {
         try {
             start = Integer.parseInt(request.getParameter("page.start"));
         } catch (Exception e) {
-
+            ;
         }
         try {
             count = Integer.parseInt(request.getParameter("page.count"));
         } catch (Exception e) {
+            ;
         }
         Page page = new Page(start, count);
 
@@ -41,7 +42,6 @@ public class homeServlet extends HttpServlet {
         request.setAttribute("page", page);
 
         request.getRequestDispatcher("/home.jsp").forward(request, response);
-//      response.sendRedirect(request.getContextPath() + "/home.jsp");
 
     }
 }

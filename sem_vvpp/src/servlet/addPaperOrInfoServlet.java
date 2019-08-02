@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.*;
 
-@WebServlet(name = "addPaperOrInfoServlet", urlPatterns = { "/admin/addPaperOrInfo" })
+@WebServlet(name = "addPaperOrInfoServlet", urlPatterns = { "/admin/add_paper_info" })
 @MultipartConfig
 public class addPaperOrInfoServlet extends HttpServlet {
 
@@ -69,6 +69,6 @@ public class addPaperOrInfoServlet extends HttpServlet {
 
         java.io.PrintWriter out2 = response.getWriter();
 
-        out2.print("<script language='javascript'>alert('上传成功！');window.location.href='/admin';</script>");
+        out2.print("<script language='javascript'>alert('上传成功！');window.location.href='/admin/paper_info';</script>");
     }
 }

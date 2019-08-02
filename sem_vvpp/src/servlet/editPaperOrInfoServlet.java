@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name="editPaperOrInfoServlet", urlPatterns={"/admin/editPaperOrInfo"})
+@WebServlet(name="editPaperOrInfoServlet", urlPatterns={"/admin/edit_paper_info"})
 public class editPaperOrInfoServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -20,7 +20,6 @@ public class editPaperOrInfoServlet extends HttpServlet {
 
         int id = Integer.parseInt(request.getParameter("id"));
         PaperInfo paperInfo = PaperInfoDAO.get(id);
-//        request.setAttribute("pi", paperInfo);
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
         PrintWriter writer = response.getWriter();

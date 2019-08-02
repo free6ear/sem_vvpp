@@ -57,10 +57,10 @@ public class Page {
     public int getLast() {
         int last;
 
-        if (0 == total / count)
+        if (0 == total % count)
             last = total - count;
         else
-            last = total - total / count;
+            last = total - total % count;
 
         last = last<0?0:last;
 

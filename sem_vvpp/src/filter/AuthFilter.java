@@ -29,14 +29,10 @@ public class AuthFilter implements Filter {
             chain.doFilter(request, response);
             return;
         }
-//        if (uri.endsWith("login.jsp") || uri.endsWith("login")) {
-//            chain.doFilter(request, response);
-//            return;
-//        }
 
         String username = (String)request.getSession().getAttribute("username");
         if (null == username) {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect(request.getContextPath() + "login.jsp");
             return;
         }
 

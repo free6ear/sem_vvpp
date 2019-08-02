@@ -1,4 +1,8 @@
+<%@ page import="java.io.File" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +17,18 @@
     <title>登录</title>
     <link rel="shortcut icon" href="./imgs/login_icon.png">
     <style type="text/css">
+        a:focus, a:hover {
+            color: #cf000f;
+            text-decoration: none;
+        }
+        a:focus, a:active {
+            color: #cf000f;
+            text-decoration: none;
+        }
+        a {
+            color: #cf000f;
+            text-decoration: none;
+        }
         .bottom li{
             margin:0 auto;
             height: 50px;
@@ -217,48 +233,41 @@
                         <th style="text-align: right"><a href="/home"><img src="./imgs/more_icon.png" style="height: 20px; width:20px;  margin-bottom: -10px; margin-right: -8px;"></a></th>
                     </thead>
                     <tbody style="display: table; width: 96.5%">
-                        <tr>
-                            <td>
-                                <font size="4">半刻闲｜高考结束后的你，该好好安排一下了</font>                              
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">资讯</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <font size="4">看2019款东南DX3上市直播，赢小米Play手机</font>                              
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">资讯</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <font size="4">“小清新”闯进大上海车展，东南汽车真够别出心裁</font>                              
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">资讯</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <font size="4">&nbsp;邢志远 于 2019年6月13日 发表了 <font color="#cf000f">《虚拟化车辆性能平台的建设与应用》</font></font>  
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <font size="4">罗淼 于 2019年6月5日 发表了 <font color="#cf000f">《OptiStruct在白车身焊点优化中的应用》</font></font>                              
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <font size="4">陆志成 于 2019年5月28日 发表了 <font color="#cf000f">《HyperWorks在某车带天窗顶盖的刚度分析中应用》</font></font>    
-                                <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
-                            </td>
-                        </tr>
+                        <c:forEach items="${pis}" var = "pi" varStatus="status">
+<%--                            <c:if test="${pis == null}">--%>
+<%--                                <c:redirect url="/index"></c:redirect>--%>
+<%--                            </c:if>--%>
+                            <c:choose>
+                                <c:when test="${'资讯' == pi.type}">
+                                    <tr>
+                                        <td>
+                                            <%
+                                                String token = "web" + File.separator;
+                                                request.setAttribute("token", token);
+                                            %>
+                                            <font size="4"><a href="./pdfjs/web/viewer.html?file=${fn:substring(pi.path, fn:indexOf(pi.path, token) + 4, fn:length(pi.path))}" target=_blank>${pi.title}</a></font>
+                                            <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">资讯</button>
+                                        </td>
+                                    </tr>
+                                </c:when>
+                                <c:when test="${pi.type == '论文'}">
+                                    <tr>
+                                        <td>
+                                            <font size="4">&nbsp;${pi.author} 于 <fmt:formatDate pattern="yyyy年M月d日" value="${pi.createDate}" /> 发表了<a href="./pdfjs/web/viewer.html?file=${fn:substring(pi.path, fn:indexOf(pi.path, token) + 4, fn:length(pi.path))}" target=_blank>《${pi.title}》</a></font>
+                                            <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
+                                        </td>
+                                    </tr>
+                                </c:when>
+                            </c:choose>
+                        </c:forEach>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
     <script type="text/javascript" color="214,69,65" opacity='1' zIndex="-2" count="99" src="./js/canvas-nest.js"></script>
+    <script src="./pdfjs/build/pdf.js"></script>
+    <script src="./pdfjs/build/pdf.worker.js"></script>
     <script>
         $("form.form-horizontal").submit(function(){
             if(0==$("#inputEmail3").val().length||0==$("#inputPassword3").val().length){

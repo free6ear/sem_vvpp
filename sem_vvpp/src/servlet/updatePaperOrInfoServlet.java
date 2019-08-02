@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name="updatePaperOrInfoServlet", urlPatterns={"/admin/updatePaperOrInfo"})
+@WebServlet(name="updatePaperOrInfoServlet", urlPatterns={"/admin/update_paper_info"})
 public class updatePaperOrInfoServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -29,7 +29,7 @@ public class updatePaperOrInfoServlet extends HttpServlet {
 
         PaperInfoDAO.update(paperInfo);
 
-        response.sendRedirect(request.getContextPath() + "/admin");
+        response.sendRedirect(request.getContextPath() + "/admin/paper_info");
 
     }
 }

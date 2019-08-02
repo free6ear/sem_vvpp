@@ -158,6 +158,40 @@ public class PaperInfoDAO {
 		}
 		return beans;
 	}
+
+	public List<PaperInfo> listLatest(int count) {
+
+		List<PaperInfo> beans = new ArrayList<PaperInfo>();
+
+		String sql = "select * from paper_info order by id desc limit " + count;
+
+		try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
+
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				PaperInfo bean = new PaperInfo();
+				int id = rs.getInt(1);
+				String title = rs.getString("title");
+				String author = rs.getString("author");
+				String path = rs.getString("path");
+				Date createDate = DateUtil.t2d(rs.getTimestamp("create_date"));
+				String type = rs.getString("type");
+
+				bean.setTitle(title);
+				bean.setAuthor(author);
+				bean.setPath(path);
+				bean.setCreateDate(createDate);
+				bean.setId(id);
+				bean.setType(type);
+				beans.add(bean);
+			}
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+		return beans;
+	}
 	
 	public List<PaperInfo> search(String keyword, int start, int count) {
 		

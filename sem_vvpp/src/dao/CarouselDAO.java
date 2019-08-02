@@ -14,7 +14,39 @@ import util.DBUtil;
 import util.DateUtil;
 
 public class CarouselDAO {
-	
+
+	public static Carousel get(int id) {
+
+		Carousel bean = new Carousel();
+
+		String sql = "select * from carousel where id = ?";
+
+		try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
+
+			ps.setInt(1, id);
+
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+
+				id = rs.getInt(1);
+				String title = rs.getString("title");
+				String path = rs.getString("path");
+				Date createDate = DateUtil.t2d(rs.getTimestamp("create_date"));
+
+				bean.setTitle(title);
+				bean.setPath(path);
+				bean.setCreateDate(createDate);
+				bean.setId(id);
+			}
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+		return bean;
+	}
+
+
 	public int getTotal(int id) {
 		int total = 0;
 		try (Connection c = DBUtil.getConnection(); Statement s = c.createStatement();) {
@@ -56,12 +88,11 @@ public class CarouselDAO {
 	
 	public void update(Carousel bean) {
 		
-		String sql = "update carousel set title = ?, path = ? where id = ?";
+		String sql = "update carousel set title = ? where id = ?";
 		try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
 			
 			ps.setString(1, bean.getTitle());
-			ps.setString(2, bean.getPath());
-			ps.setInt(3, bean.getId());
+			ps.setInt(2, bean.getId());
 			ps.execute();
 			
 		} catch (SQLException e) {
@@ -84,16 +115,14 @@ public class CarouselDAO {
 		}
 	}
 	
-	public List<Carousel> list(int start, int count) {
+	public List<Carousel> list() {
 		List<Carousel> beans = new ArrayList<Carousel>();
 		
-		String sql = "select * from carousel limit ?,? ";
+		String sql = "select * from carousel";
 		
 		try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
 			
-			ps.setInt(1, start);
-			ps.setInt(2, count);
-			
+
 			ResultSet rs = ps.executeQuery();
 			
 			while (rs.next()) {
