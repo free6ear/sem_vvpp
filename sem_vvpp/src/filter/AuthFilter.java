@@ -15,8 +15,12 @@ public class AuthFilter implements Filter {
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
         throws IOException, ServletException {
+
         HttpServletRequest request = (HttpServletRequest)req;
         HttpServletResponse response = (HttpServletResponse)res;
+
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
 
         String uri =request.getRequestURI();
 
@@ -32,7 +36,8 @@ public class AuthFilter implements Filter {
 
         String username = (String)request.getSession().getAttribute("username");
         if (null == username) {
-            response.sendRedirect(request.getContextPath() + "login.jsp");
+            java.io.PrintWriter out = response.getWriter();
+            out.print("<script language='javascript'>alert('请先登录！');window.location.href='../index';</script>");
             return;
         }
 

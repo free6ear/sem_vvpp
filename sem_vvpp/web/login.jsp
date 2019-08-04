@@ -121,6 +121,34 @@
         #login-switch-button:hover {
             color: #cf000f;
         }
+        body{
+            perspective: 1000px;
+        }
+        .login-box {
+            width: 620px;
+            height: 334px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+        .card{
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;//关键代码
+        border-radius: 20px;
+        }
+        .front{
+            position: -24px -23px;
+        }
+        .back{
+            transform: rotateY(180deg);
+            position: -287px -23px;
+        }
+        .flipped{
+            transform: rotateY(180deg);
+        }
     </style>
 </head>
 <body>
@@ -193,32 +221,65 @@
             <!--Login model-->
              <div class="col-xs-4 col-xs-offset-1">
                 <div class="row">
-                    <div class="col-xs-8 col-xs-offset-2">
-                        <form class="form-horizontal" method="post" action="login" style="text-align:center; margin: -35px -100px; transform: translateY(32%)">
-                            <span class="heading">用户登录</span>
-                            <div class="form-group">
-                                <i class="fa fa-user"></i>
-                                <input type="text" class="form-control" id="inputEmail3" name="username" placeholder="用户名">
-                            </div>
-                            <div class="form-group help">
-                                <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="密　码">
-                                <i class="fa fa-lock"></i>
-                            </div>
-                            <div class="pull-right" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">
-                                <font class="errorMessage"></font>
+                    <div class="login-box">
+                        <!--内容管理员登录-->
+                        <div class="card front" id="front">
+                            <div class="col-xs-8 col-xs-offset-2">
+                                <form class="form-horizontal" method="post" action="login" style="text-align:center; margin: -35px -100px; transform: translateY(32%)">
+                                    <span class="heading">内容管理员登录</span>
+                                    <div class="form-group">
+                                        <i class="fa fa-user"></i>
+                                        <input type="text" class="form-control" id="inputEmail3" name="username" placeholder="用户名">
+                                    </div>
+                                    <div class="form-group help">
+                                        <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="密　码">
+                                        <i class="fa fa-lock"></i>
+                                    </div>
+                                    <div class="pull-right" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">
+                                        <font class="errorMessage"></font>
 
+                                    </div>
+                                    <div class="pull-right" id="loginErrorMessageDiv" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">
+                                        ${msg}
+                                    </div>
+                                    <div class="form-group" id="login-switch">
+                                        <a href="">
+                                            <span class="text" id="login-switch-button" style="color: rgba(46, 49, 49, 0.8)"><u>我是普通用户</u></span>
+                                        </a>
+                                        <button type="submit" id="login-button" class="btn btn-default" style="outline:none">登录</button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="pull-right" id="loginErrorMessageDiv" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">
-                                ${msg}
-                            </div>
-                            <div class="form-group" id="login-switch">
-                                <a href="#">
-                                    <span class="text" id="login-switch-button" style="color: rgba(46, 49, 49, 0.8)"><u>我是内容管理员</u></span>
-                                </a>
-                                <button type="submit" id="login-button" class="btn btn-default" style="outline:none">登录</button>
-                            </div>
+                        </div>
+                        <!--普通用户登录-->
+                        <div class="card back" id="back">
+                            <div class="col-xs-8 col-xs-offset-2">
+                                <form class="form-horizontal" method="post" style="text-align:center; margin: -35px -100px; transform: translateY(32%)">
+                                    <span class="heading">用户登录</span>
+                                    <div class="form-group">
+                                        <i class="fa fa-user"></i>
+                                        <input type="text" class="form-control" id="inputEmail2" name="username2" placeholder="用户名">
+                                    </div>
+                                    <div class="form-group help">
+                                        <input type="password" class="form-control" id="inputPassword2" name="password2" placeholder="密　码">
+                                        <i class="fa fa-lock"></i>
+                                    </div>
+                                    <div class="pull-right" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">
+                                        <font class="errorMessage"></font>
 
-                        </form>
+                                    </div>
+                                    <div class="pull-right" id="loginErrorMessageDiv2" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">
+                                        ${msg}
+                                    </div>
+                                    <div class="form-group" id="login-switch2s">
+                                        <a href="">
+                                            <span class="text" id="login-switch-button2" style="color: rgba(46, 49, 49, 0.8)"><u>我是内容管理员</u></span>
+                                        </a>
+                                        <button type="submit" id="login-button2" class="btn btn-default" style="outline:none">登录</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -279,6 +340,16 @@
         $("form.form-horizontal input").keyup(function(){
             $("div#loginErrorMessageDiv").hide();
             $("font.errorMessage").empty();
+        });
+
+        $("#login-switch-button").hover(function(event){
+            $('#front').toggleClass("flipped");
+            $('#back').toggleClass("flipped");
+
+        });
+        $("#login-switch-button2").hover(function(event){
+            $('#back').toggleClass("flipped");
+            $('#front').toggleClass("flipped");
         });
 
     </script>

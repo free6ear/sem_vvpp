@@ -17,6 +17,22 @@
     <title>论文资讯</title>
     <link rel="shortcut icon" href="./imgs/paper_icon.png">
     <style>
+        .triangle1{
+            border: 26px solid transparent;
+            border-left: 26px solid  #cf000f;
+        }
+        .triangle2{
+            border: 26px solid transparent;
+            border-left: 26px solid  darkgray;
+        }
+        .triangle3{
+            border: 26px solid transparent;
+            border-right: 26px solid  #cf000f;
+        }
+        .triangle4{
+            border: 26px solid transparent;
+            border-right: 26px solid  darkgray;
+        }
         body {
             font-size: 22px;
         }
@@ -79,29 +95,64 @@
             margin: 8px 0;
             border-radius: 4px;
         }
+        .table>thead>tr>th {
+            vertical-align: bottom;
+            border-bottom: 0px solid #ddd;
+            padding: 0px;
+        }
+        .table>tbody>tr>td {
+            padding: 10px;
+        }
+        .col-xs-1 {
+            padding-right: 0px;
+            padding-left: 15px;
+        }
+        .container-fluid {
+            padding-right: 0px;
+            padding-left: 0px;
+            margin-right: auto;
+            margin-left: auto;
+        }
     </style>
 </head>
 <body>
     <div class="container-fluid" style="min-width: 1220px">
-            <div class="row clearfix" style="height: 100px; margin-top: 17px">
+            <div class="row clearfix" style="height: 100px; margin-top: 9px">
                 <div class="col-xs-2 col-xs-offset-1">
-                    <a href="/index"><img src="./imgs/main_logo.png" style="margin-top: 10px; height: auto; width: 200px;" alt="东南汽车"></a>
+                    <a href="/index"><img src="./imgs/main_logo.png" style="margin-top: 8px; height: auto; width: 200px;" alt="东南汽车"></a>
                 </div>
-                <div class="col-xs-4 col-xs-offset-1" style="text-align: center; margin-top: 17px">
-                    <img src="./imgs/home_title.png" alt="论文资讯" style="margin-right: -50px">
+                <div class="col-xs-4 col-xs-offset-1" style="text-align: center; margin-top: 8px">
+                    <img src="./imgs/home_title.png" alt="论文资讯" style="margin-left: -15px;
+">
                 </div>
             </div>
             
         <div class="row clearfix" style="height: 800px">
-            <!-- <div class="col-xs-1" id="triangle" style="width: 5px; height:5px; margin-bottom: -85px"></div> -->
-            <div class="col-xs-offset-1 col-xs-10">
+            <div class="col-xs-1">
+                <div class="triangle1" style="margin-top: -14px"></div>
+                <div class="triangle2"></div>
+                <div class="triangle1"></div>
+                <div class="triangle2"></div>
+                <div class="triangle1"></div>
+                <div class="triangle2"></div>
+                <div class="triangle1"></div>
+                <div class="triangle2"></div>
+                <div class="triangle1"></div>
+                <div class="triangle2"></div>
+                <div class="triangle1"></div>
+                <div class="triangle2"></div>
+                <div class="triangle1"></div>
+                <div class="triangle2"></div>
+                <div class="triangle1"></div>
+            </div>
+            <div class="col-xs-10 ">
                 <table class="table table-hover" style="margin-top: -22px">
                     <thead class="row" style="color: #cf000f; margin-top: 20px">
-                        <th class="col-xs-1" style="text-align: center">序号</th>
-                        <th class="col-xs-1" style="text-align: center">类型</th>
-                        <th class="col-xs-7" style="text-align: center">标题</th>
-                        <th class="col-xs-1" style="text-align: center">作者</th>
-                        <th class="col-xs-2" style="text-align: center">发布时间</th>
+                        <th class="col-xs-1" style="text-align: center"></th>
+                        <th class="col-xs-1" style="text-align: center"></th>
+                        <th class="col-xs-7" style="text-align: center"></th>
+                        <th class="col-xs-1" style="text-align: center"></th>
+                        <th class="col-xs-2" style="text-align: center"></th>
                     </thead>
                     <tbody style="text-align: center; font-weight: 500">
                         <c:forEach items="${pis}" var = "pi" varStatus="status">
@@ -129,9 +180,27 @@
                     </tbody>
                 </table>
             </div>
+            <div class="col-xs-1">
+                <div class="triangle3" style="margin-top: -14px"></div>
+                <div class="triangle4"></div>
+                <div class="triangle3"></div>
+                <div class="triangle4"></div>
+                <div class="triangle3"></div>
+                <div class="triangle4"></div>
+                <div class="triangle3"></div>
+                <div class="triangle4"></div>
+                <div class="triangle3"></div>
+                <div class="triangle4"></div>
+                <div class="triangle3"></div>
+                <div class="triangle4"></div>
+                <div class="triangle3"></div>
+                <div class="triangle4"></div>
+                <div class="triangle3"></div>
+            </div>
         </div>
+
         <div class="row clearfix>
-            <div class="col-xs-12 style="margin-top: -30px; padding-left: 70px">
+            <div class="col-xs-12 style="margin-top: -50px; padding-left: 70px">
                 <div class="demo" style="min-height: 40px;">          
                     <div class="row pad-15">
                         <div class="col-md-12">
