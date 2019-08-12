@@ -17,21 +17,9 @@
     <title>论文资讯</title>
     <link rel="shortcut icon" href="./imgs/paper_icon.png">
     <style>
-        .triangle1{
-            border: 26px solid transparent;
-            border-left: 26px solid  #cf000f;
-        }
         .triangle2{
-            border: 26px solid transparent;
-            border-left: 26px solid  darkgray;
-        }
-        .triangle3{
-            border: 26px solid transparent;
-            border-right: 26px solid  #cf000f;
-        }
-        .triangle4{
-            border: 26px solid transparent;
-            border-right: 26px solid  darkgray;
+            border: 50px solid transparent;
+            border-right: 50px solid  #cf000f;
         }
         body {
             font-size: 22px;
@@ -81,7 +69,7 @@
         .pagination>li>a, .pagination>li>span {
             position: relative;
             float: left;
-            padding: 8px 0px;
+            padding: 6px 0px;
             margin-left: -1px;
             line-height: 1.42857143;
             color: #337ab7;
@@ -92,7 +80,7 @@
         .pagination {
             display: inline-block;
             padding-left: 0;
-            margin: 8px 0;
+            margin: 3px 0;
             border-radius: 4px;
         }
         .table>thead>tr>th {
@@ -117,35 +105,18 @@
 </head>
 <body>
     <div class="container-fluid" style="min-width: 1220px">
-            <div class="row clearfix" style="height: 100px; margin-top: 9px">
+            <div class="row clearfix" style="height: 120px; margin-top: 9px">
                 <div class="col-xs-2 col-xs-offset-1">
-                    <a href="/index"><img src="./imgs/main_logo.png" style="margin-top: 8px; height: auto; width: 200px;" alt="东南汽车"></a>
+                    <a href="/index"><img src="./imgs/main_logo.png" style="margin-top: 18px; height: auto; width: 200px;" alt="东南汽车"></a>
                 </div>
-                <div class="col-xs-4 col-xs-offset-1" style="text-align: center; margin-top: 8px">
+                <div class="col-xs-4 col-xs-offset-1" style="text-align: center; margin-top: 18px">
                     <img src="./imgs/home_title.png" alt="论文资讯" style="margin-left: -15px;
 ">
                 </div>
             </div>
             
         <div class="row clearfix" style="height: 800px">
-            <div class="col-xs-1">
-                <div class="triangle1" style="margin-top: -14px"></div>
-                <div class="triangle2"></div>
-                <div class="triangle1"></div>
-                <div class="triangle2"></div>
-                <div class="triangle1"></div>
-                <div class="triangle2"></div>
-                <div class="triangle1"></div>
-                <div class="triangle2"></div>
-                <div class="triangle1"></div>
-                <div class="triangle2"></div>
-                <div class="triangle1"></div>
-                <div class="triangle2"></div>
-                <div class="triangle1"></div>
-                <div class="triangle2"></div>
-                <div class="triangle1"></div>
-            </div>
-            <div class="col-xs-10 ">
+            <div class="col-xs-10 col-xs-offset-1">
                 <table class="table table-hover" style="margin-top: -22px">
                     <thead class="row" style="color: #cf000f; margin-top: 20px">
                         <th class="col-xs-1" style="text-align: center"></th>
@@ -165,7 +136,6 @@
                                 <td>
                                     <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">${pi.type}</button>
                                 </td>
-
                                 <%
                                     String token = "web" + File.separator;
                                     request.setAttribute("token", token);
@@ -181,21 +151,7 @@
                 </table>
             </div>
             <div class="col-xs-1">
-                <div class="triangle3" style="margin-top: -14px"></div>
-                <div class="triangle4"></div>
-                <div class="triangle3"></div>
-                <div class="triangle4"></div>
-                <div class="triangle3"></div>
-                <div class="triangle4"></div>
-                <div class="triangle3"></div>
-                <div class="triangle4"></div>
-                <div class="triangle3"></div>
-                <div class="triangle4"></div>
-                <div class="triangle3"></div>
-                <div class="triangle4"></div>
-                <div class="triangle3"></div>
-                <div class="triangle4"></div>
-                <div class="triangle3"></div>
+                <div class="triangle2" style="margin-top: -73px"></div>
             </div>
         </div>
 

@@ -230,11 +230,11 @@
                         </p>
                     </a>
                 </li>
-                <li class="list">
+                <li class="list" style="background-color: #fff1f0">
                     <a href="/admin/carousel">
-                        <i class="glyphicon glyphicon-picture" style="font-size: 23px"></i>
+                        <i class="glyphicon glyphicon-picture" style="font-size: 23px; color: #cf000f"></i>
                         <p>
-                            <b style="font-size: 20px">轮播图</b>
+                            <b style="font-size: 20px; color: #cf000f">轮播图</b>
                         </p>
                     </a>
                 </li>
@@ -275,7 +275,7 @@
                         <tbody style="margin-top: -5px">
                         <c:forEach items="${cs}" var = "c" varStatus="status">
                             <tr>
-                                <td><img src="${c.path}" width="120px"></td>
+                                <td><img src="/carousel_upload/${c.title}.jpg" width="120px"></td>
                                 <td>${c.title}</td>
                                 <td>
                                     <a onclick="editCarousel(${c.id})" data-toggle="modal" data-target="#editCarouselModal">
@@ -348,8 +348,11 @@
         <div class="modal-content">
             <form method="get" action="/admin/delete_carousel">
                 <div class="modal-header">
-                    <h3 class="modal-title" id="deleteCarouselModalTitle" style="text-align: center; font-weight: bolder">确定要删除该条内容吗？</h3>
+                    <h2 class="modal-title" id="deleteCarouselModalTitle" style="font-weight: bolder">提醒</h2>
                     <input id="carousel-delete-id" type="hidden" name="carousel-delete-id">
+                </div>
+                <div class="modal-body" style="text-align: center">
+                    <h4>确定要删除该条内容吗？</h4>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>

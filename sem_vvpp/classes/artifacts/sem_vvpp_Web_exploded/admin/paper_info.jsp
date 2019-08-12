@@ -222,11 +222,11 @@
             </div>
             <div class="sidebar-wrapper">
                     <ul class="nav" id="tab">
-                        <li class="list">
-                            <a href="/admin/paper_info" >
-                                <i class="glyphicon glyphicon-list-alt" style="font-size: 23px"></i>
+                        <li class="list" style="background-color: #fff1f0">
+                            <a href="/admin/paper_info">
+                                <i class="glyphicon glyphicon-list-alt" style="font-size: 23px; color: #cf000f"></i>
                                 <p>
-                                    <b style="font-size: 21px">论文资讯</b>
+                                    <b style="font-size: 21px; color: #cf000f">论文资讯</b>
                                 </p>
                             </a>
                         </li>
@@ -436,8 +436,11 @@
             <div class="modal-content">
                 <form method="get" action="/admin/delete_paper_info">
                     <div class="modal-header">
-                        <h3 class="modal-title" id="deletePaperInfoModalTitle" style="text-align: center; font-weight: bolder">确定要删除该条内容吗？</h3>
+                        <h2 class="modal-title" id="deletePaperInfoModalTitle" style="font-weight: bolder">提醒</h2>
                         <input id="paper-info-delete-id" type="hidden" name="paper-info-delete-id">
+                    </div>
+                    <div class="modal-body" style="text-align: center">
+                        <h4>确定要删除该条内容吗？</h4>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>

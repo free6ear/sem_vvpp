@@ -1,6 +1,8 @@
 package servlet;
 
+import bean.Carousel;
 import bean.PaperInfo;
+import dao.CarouselDAO;
 import dao.PaperInfoDAO;
 
 import javax.servlet.ServletException;
@@ -17,9 +19,16 @@ public class indexServlet extends HttpServlet {
 
         int count = 6;
 
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
+
         PaperInfoDAO paperInfoDAO = new PaperInfoDAO();
         List<PaperInfo> pis = paperInfoDAO.listLatest(count);
 
+        CarouselDAO carouselDAO = new CarouselDAO();
+        List<Carousel> cs = carouselDAO.list();
+
+        request.setAttribute("cs", cs);
         request.setAttribute("pis", pis);
 
         request.getRequestDispatcher("/login.jsp").forward(request, response);
@@ -32,8 +41,15 @@ public class indexServlet extends HttpServlet {
         int count = 6;
 
         PaperInfoDAO paperInfoDAO = new PaperInfoDAO();
+
         List<PaperInfo> pis = paperInfoDAO.listLatest(count);
 
+        CarouselDAO carouselDAO = new CarouselDAO();
+        List<Carousel> cs = carouselDAO.list();
+
+        request.setAttribute("cs", cs);
+        String test = cs.toString();
+        System.out.println(test);
         request.setAttribute("pis", pis);
 
         request.getRequestDispatcher("/login.jsp").forward(request, response);

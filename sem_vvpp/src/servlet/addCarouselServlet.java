@@ -1,9 +1,7 @@
 package servlet;
 
 import bean.Carousel;
-import bean.PaperInfo;
 import dao.CarouselDAO;
-import dao.PaperInfoDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -40,7 +38,7 @@ public class addCarouselServlet extends HttpServlet {
 
         String uploadPath = request.getServletContext().getRealPath("/");
 
-        File uploadFilePath = new File(uploadPath + UPLOAD_DIRECTORY);
+        File uploadFilePath = new File(uploadPath + "/pdfjs/web/" + UPLOAD_DIRECTORY);
         if (!uploadFilePath.exists()) {
             uploadFilePath.mkdirs();
         }
@@ -57,7 +55,7 @@ public class addCarouselServlet extends HttpServlet {
         paperOrInfoFile.write(uploadFilePath.getAbsolutePath() + File.separator + picName);
 
         carousel.setTitle(carouselTitle);
-        carousel.setPath(uploadFilePath.getAbsolutePath() + File.separator + picName);
+        carousel.setPath(picName);
 
         carouselDAO.add(carousel);
 

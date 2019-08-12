@@ -121,10 +121,13 @@
         #login-switch-button:hover {
             color: #cf000f;
         }
+        body{
+            perspective: 1000px;
+        }
     </style>
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" style="min-width: 1200px">
         <div class="row" style="height: 11vh">
         <!--Header logo--> 
         <div class="col-xs-6" style="text-align: left">
@@ -136,50 +139,15 @@
          
         </div>
         <!--Body-->
-        <div class="row clearfix bg-primary">
+        <div class="row clearfix bg-primary" style="height: 507px;">
             <div class="col-xs-6">
                 <!--Carousel model-->
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                    <ol class="carousel-indicators" id="olnum">
                     </ol>
                     <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img src="./imgs/carousel_pic1.jpg" class="img-respinsive">
-                            <div class="carousel-caption">
-                                <h1><b>电动福建&nbsp&nbsp美丽八闽<br>东南汽车积极响应政府新能源号召</b></h1>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="./imgs/carousel_pic2.jpg">
-                            <div class="carousel-caption">
-                                <h1><b>响应“一带一路”拓展海外市场<br>庆祝东南汽车缅甸曼德勒展厅开业</b></h1>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="./imgs/carousel_pic3.jpg">
-                            <div class="carousel-caption">
-                                <h1><b>东南汽车降税优惠至高3万<br>2019款东南DX3预售价6.39万起</b></h1>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="./imgs/carousel_pic4.jpg">
-                            <div class="carousel-caption">
-                                <h1><b>造物志<br>“翼”见钟情的背后，翼设计与鹰志故事</b></h1>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="./imgs/carousel_pic5.png">
-                            <div class="carousel-caption">
-                                <h1><b>东南汽车：省钱虽是硬道理<br>但靠谱才是真正的让利于民</b></h1>
-                            </div>
-                        </div>
+                    <div class="carousel-inner" role="listbox" id="carousel">
                     </div>
                     <!-- Controls -->
                     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -191,34 +159,65 @@
                 </div>
             </div>
             <!--Login model-->
-             <div class="col-xs-4 col-xs-offset-1">
+            <div class="col-xs-4 col-xs-offset-1">
                 <div class="row">
-                    <div class="col-xs-8 col-xs-offset-2">
-                        <form class="form-horizontal" method="post" action="login" style="text-align:center; margin: -35px -100px; transform: translateY(32%)">
-                            <span class="heading">用户登录</span>
-                            <div class="form-group">
-                                <i class="fa fa-user"></i>
-                                <input type="text" class="form-control" id="inputEmail3" name="username" placeholder="用户名">
-                            </div>
-                            <div class="form-group help">
-                                <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="密　码">
-                                <i class="fa fa-lock"></i>
-                            </div>
-                            <div class="pull-right" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">
-                                <font class="errorMessage"></font>
+                    <div class="login-box">
+                        <!--内容管理员登录-->
+                        <div class="card front" id="front">
+                            <div class="col-xs-8 col-xs-offset-2">
+                                <form class="form-horizontal" method="post" action="login" style="text-align:center; margin: -35px -100px; transform: translateY(32%)">
+                                    <span class="heading">内容管理员登录</span>
+                                    <div class="form-group">
+                                        <i class="fa fa-user"></i>
+                                        <input type="text" class="form-control" id="inputEmail3" name="username" placeholder="用户名">
+                                    </div>
+                                    <div class="form-group help">
+                                        <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="密　码">
+                                        <i class="fa fa-lock"></i>
+                                    </div>
+                                    <div class="pull-right" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">
+                                        <font class="errorMessage"></font>
 
+                                    </div>
+                                    <div class="pull-right" id="loginErrorMessageDiv" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">
+                                        ${msg}
+                                    </div>
+                                    <div class="form-group" id="login-switch">
+                                        <!-- <a href=""> -->
+                                        <a><span class="text" id="change1" style="color: rgba(46, 49, 49, 0.8)"><u>我是管理员用户</u></span></a>
+                                        <!-- </a> -->
+                                        <button type="submit" id="login-button" class="btn btn-default" style="outline:none">登录</button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="pull-right" id="loginErrorMessageDiv" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">
-                                ${msg}
-                            </div>
-                            <div class="form-group" id="login-switch">
-                                <a href="#">
-                                    <span class="text" id="login-switch-button" style="color: rgba(46, 49, 49, 0.8)"><u>我是内容管理员</u></span>
-                                </a>
-                                <button type="submit" id="login-button" class="btn btn-default" style="outline:none">登录</button>
-                            </div>
+                        </div>
+                        <!--普通用户登录-->
+                        <div class="card back" id="back" hidden>
+                            <div class="col-xs-8 col-xs-offset-2">
+                                <form class="form-horizontal" method="post" style="text-align:center; margin: -35px -100px; transform: translateY(32%)">
+                                    <span class="heading">普通用户登录</span>
+                                    <div class="form-group">
+                                        <i class="fa fa-user"></i>
+                                        <input type="text" class="form-control" id="inputEmail2" name="" placeholder="用户名">
+                                    </div>
+                                    <div class="form-group help">
+                                        <input type="password" class="form-control" id="inputPassword2" name="" placeholder="密　码">
+                                        <i class="fa fa-lock"></i>
+                                    </div>
+                                    <div class="pull-right" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">
+                                        <font class="errorMessage"></font>
 
-                        </form>
+                                    </div>
+                                    <div class="pull-right" id="loginErrorMessageDiv2" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">
+                                        ${msg}
+                                    </div>
+                                    <div class="form-group" id="login-switch2s">
+                                        <a><span class="text" id="change2" style="color: rgba(46, 49, 49, 0.8)"><u>我是普通用户</u></span></a>
+                                        <button type="button" id="login-button2" class="btn btn-default" style="outline:none">登录</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -234,9 +233,6 @@
                     </thead>
                     <tbody style="display: table; width: 96.5%">
                         <c:forEach items="${pis}" var = "pi" varStatus="status">
-<%--                            <c:if test="${pis == null}">--%>
-<%--                                <c:redirect url="/index"></c:redirect>--%>
-<%--                            </c:if>--%>
                             <c:choose>
                                 <c:when test="${'资讯' == pi.type}">
                                     <tr>
@@ -281,6 +277,52 @@
             $("font.errorMessage").empty();
         });
 
+        $(function () {
+            //填充轮播图数
+            for (var i = 0; i < ${fn:length(cs)}; i++) {
+                if (i == 0) {
+                    $('#olnum').append("<li data-target='#carousel-example-generic' data-slide-to='0'  class='active'></li>")
+                } else {
+                    $('#olnum').append("<li data-target='#carousel-example-generic' data-slide-to='"+i+"'></li>")
+                }
+            }
+            <%
+                String token = "web" + File.separator;
+                request.setAttribute("token", token);
+            %>
+            //填充每幅图像具体信息
+            <c:forEach items="${cs}" var="c" varStatus="status">
+                <c:if test="${status.index == 0}">
+                    $('#carousel').append(
+                        "<div class='item active'>" +
+                        "<img src='/pdfjs/web/carousel_upload/${c.path}' alt='test' style='width: 50vw'>" +
+                        "<div class='carousel-caption'>" +
+                        "<h1><b>${c.title}</b></h1>" +
+                        "</div>" +
+                        "</div>"
+                    );
+                </c:if>
+                <c:if test="${status.index != 0}">
+                $('#carousel').append(
+                    "<div class='item'>" +
+                    "<img src='/pdfjs/web/carousel_upload/${c.path}' alt='test' style='width: 50vw'>" +
+                    "<div class='carousel-caption'>" +
+                    "<h1><b>${c.title}</b></h1>" +
+                    "</div>" +
+                    "</div>"
+                );
+            </c:if>
+            </c:forEach>
+        });
+        $('#change1').click(function() {
+            $('#front').hide();
+            $('#back').show();
+        });
+
+        $('#change2').click(function() {
+            $('#back').hide();
+            $('#front').show();
+        })
     </script>
 </body>
 </html>
