@@ -223,7 +223,7 @@
         <div class="sidebar-wrapper">
             <ul class="nav" id="tab">
                 <li class="list">
-                    <a href="/admin/paper_info" >
+                    <a href="${pageContext.request.contextPath}/admin/paper_info" >
                         <i class="glyphicon glyphicon-list-alt" style="font-size: 23px"></i>
                         <p>
                             <b style="font-size: 21px">论文资讯</b>
