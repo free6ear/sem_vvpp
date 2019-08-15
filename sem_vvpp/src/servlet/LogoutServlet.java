@@ -16,6 +16,6 @@ public class LogoutServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         request.getSession().removeAttribute("username");
         out.print("<script language='javascript'>alert('您已成功退出系统！')</script>");
-        response.sendRedirect("/index");
+        response.sendRedirect( request.getContextPath() + "/index");
     }
 }

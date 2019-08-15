@@ -41,7 +41,7 @@ public class homeServlet extends HttpServlet {
         request.setAttribute("pis", pis);
         request.setAttribute("page", page);
 
-        request.getRequestDispatcher("/home.jsp").forward(request, response);
+        request.getRequestDispatcher(request.getContextPath() + "/home.jsp").forward(request, response);
 
     }
 }

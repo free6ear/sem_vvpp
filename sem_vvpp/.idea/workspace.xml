@@ -2,31 +2,664 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="sem_vvpp:Web exploded" />
+      <artifact name="sem_vvpp" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d5223ee-20cf-45f0-83d6-a17c73bebc95" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/servlet/indexCarouselServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/commons-lang-2.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/jsp-api.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.0.8-bin.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/servlet-api.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/sem_vvpp_Web_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/sem_vvpp.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_0_8_bin.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/servlet/indexServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/servlet/indexServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/admin/carousel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/admin/carousel.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/admin/paper_info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/admin/paper_info.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/carousel_upload/东南汽车降税优惠至高3万 2019款东南DX3预售价6.39万起.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/carousel_upload/东南汽车降税优惠至高3万 2019款东南DX3预售价6.39万起.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/carousel_upload/东南汽车：省钱虽是硬道理 但靠谱才是真正的让利于民.png" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/carousel_upload/东南汽车：省钱虽是硬道理 但靠谱才是真正的让利于民.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/carousel_upload/造物志 “翼”见钟情的背后，翼设计与鹰志故事.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/carousel_upload/造物志 “翼”见钟情的背后，翼设计与鹰志故事.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/red.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/settings.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/imgs/carousel_pic5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/META-INF/sem_vvpp.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/bean/Carousel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/bean/PaperInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/bean/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/dao/CarouselDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/dao/PaperInfoDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/dao/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/filter/AuthFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/servlet/LoginServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/servlet/LogoutServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/servlet/addCarouselServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/servlet/addPaperOrInfoServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/servlet/adminServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/servlet/deleteCarouselServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/servlet/deletePaperInfoServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/servlet/editCarouselServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/servlet/editPaperOrInfoServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/servlet/homeServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/servlet/indexServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/servlet/listCarouselServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/servlet/updateCarouselServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/servlet/updatePaperOrInfoServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/util/DBUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/util/DateUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/classes/util/Page.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/lib/commons-fileupload-1.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/lib/commons-io-1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/lib/commons-lang-2.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/lib/fastjson-1.2.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/lib/jsp-api.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/lib/mysql-connector-java-5.0.8-bin.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/lib/servlet-api.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/admin/carousel.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/admin/paper_info.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/carousel_upload/ffff.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/carousel_upload/nn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/carousel_upload/东南汽车降税优惠至高3万 2019款东南DX3预售价6.39万起.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/carousel_upload/东南汽车降税优惠至高3万 2019款东南DX3预售价6.39万起.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/carousel_upload/东南汽车：省钱虽是硬道理 但靠谱才是真正的让利于民.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/carousel_upload/造物志 “翼”见钟情的背后，翼设计与鹰志故事.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/carousel_upload/造物志 “翼”见钟情的背后，翼设计与鹰志故事hhh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/app.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/awesome-bootstrap-checkbox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/.github/CODE_OF_CONDUCT.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/.github/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/.github/FUNDING.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/.github/ISSUE_TEMPLATE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/.github/PULL_REQUEST_TEMPLATE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/.github/config.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/.github/stale.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/CHANGE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/css/fileinput-rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/css/fileinput-rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/css/fileinput.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/css/fileinput.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/img/loading-sm.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/img/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/js/fileinput.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/js/fileinput.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/js/locales/zh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/js/plugins/piexif.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/js/plugins/piexif.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/js/plugins/purify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/js/plugins/purify.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/js/plugins/sortable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/js/plugins/sortable.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/nuget/Package.nuspec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/nuget/build.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/scss/fileinput-rtl.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/scss/fileinput.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/scss/themes/explorer-fa/theme.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/scss/themes/explorer-fas/theme.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/scss/themes/explorer/theme.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/themes/explorer-fa/theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/themes/explorer-fa/theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/themes/explorer-fa/theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/themes/explorer-fa/theme.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/themes/explorer-fas/theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/themes/explorer-fas/theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/themes/explorer-fas/theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/themes/explorer-fas/theme.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/themes/explorer/theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/themes/explorer/theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/themes/explorer/theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/themes/explorer/theme.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/themes/fa/theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/themes/fa/theme.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/themes/fas/theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/themes/fas/theme.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/themes/gly/theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap-fileinput-master/themes/gly/theme.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap/3.3.6/bootstrap-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap/3.3.6/bootstrap-theme.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap/3.3.6/bootstrap-theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap/3.3.6/bootstrap-theme.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap/3.3.6/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap/3.3.6/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap/3.3.6/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap/3.3.6/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/bootstrap/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/customer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/HELP-US-OUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/less/animated.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/less/bordered-pulled.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/less/core.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/less/fixed-width.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/less/font-awesome.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/less/icons.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/less/larger.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/less/list.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/less/mixins.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/less/path.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/less/rotated-flipped.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/less/screen-reader.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/less/stacked.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/less/variables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/scss/_animated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/scss/_bordered-pulled.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/scss/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/scss/_fixed-width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/scss/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/scss/_larger.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/scss/_list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/scss/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/scss/_path.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/scss/_rotated-flipped.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/scss/_screen-reader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/scss/_stacked.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/font-awesome-4.7.0/scss/font-awesome.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/login-background-style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/css/theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/home.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/imgs/CAE_logo_black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/imgs/back_brand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/imgs/back_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/imgs/carousel_pic1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/imgs/carousel_pic2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/imgs/carousel_pic3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/imgs/carousel_pic4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/imgs/home_title.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/imgs/login-background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/imgs/login_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/imgs/main_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/imgs/more_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/imgs/paper_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/js/bootstrap/3.3.6/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/js/bootstrap/3.3.6/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/js/bootstrap/3.3.6/npm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/js/canvas-nest.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/js/jquery/2.0.0/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/js/pdf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/js/pdf.worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/build/pdf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/build/pdf.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/build/pdf.worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/build/pdf.worker.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/78-EUC-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/78-EUC-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/78-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/78-RKSJ-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/78-RKSJ-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/78-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/78ms-RKSJ-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/78ms-RKSJ-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/83pv-RKSJ-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/90ms-RKSJ-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/90ms-RKSJ-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/90msp-RKSJ-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/90msp-RKSJ-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/90pv-RKSJ-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/90pv-RKSJ-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Add-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Add-RKSJ-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Add-RKSJ-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Add-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-CNS1-0.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-CNS1-1.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-CNS1-2.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-CNS1-3.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-CNS1-4.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-CNS1-5.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-CNS1-6.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-CNS1-UCS2.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-GB1-0.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-GB1-1.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-GB1-2.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-GB1-3.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-GB1-4.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-GB1-5.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-GB1-UCS2.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-Japan1-0.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-Japan1-1.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-Japan1-2.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-Japan1-3.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-Japan1-4.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-Japan1-5.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-Japan1-6.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-Japan1-UCS2.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-Korea1-0.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-Korea1-1.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-Korea1-2.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Adobe-Korea1-UCS2.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/B5-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/B5-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/B5pc-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/B5pc-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/CNS-EUC-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/CNS-EUC-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/CNS1-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/CNS1-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/CNS2-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/CNS2-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/ETHK-B5-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/ETHK-B5-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/ETen-B5-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/ETen-B5-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/ETenms-B5-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/ETenms-B5-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/EUC-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/EUC-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Ext-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Ext-RKSJ-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Ext-RKSJ-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Ext-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/GB-EUC-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/GB-EUC-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/GB-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/GB-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/GBK-EUC-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/GBK-EUC-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/GBK2K-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/GBK2K-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/GBKp-EUC-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/GBKp-EUC-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/GBT-EUC-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/GBT-EUC-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/GBT-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/GBT-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/GBTpc-EUC-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/GBTpc-EUC-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/GBpc-EUC-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/GBpc-EUC-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/HKdla-B5-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/HKdla-B5-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/HKdlb-B5-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/HKdlb-B5-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/HKgccs-B5-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/HKgccs-B5-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/HKm314-B5-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/HKm314-B5-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/HKm471-B5-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/HKm471-B5-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/HKscs-B5-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/HKscs-B5-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Hankaku.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Hiragana.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/KSC-EUC-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/KSC-EUC-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/KSC-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/KSC-Johab-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/KSC-Johab-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/KSC-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/KSCms-UHC-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/KSCms-UHC-HW-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/KSCms-UHC-HW-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/KSCms-UHC-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/KSCpc-EUC-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/KSCpc-EUC-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Katakana.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/NWP-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/NWP-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/RKSJ-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/RKSJ-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/Roman.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniCNS-UCS2-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniCNS-UCS2-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniCNS-UTF16-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniCNS-UTF16-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniCNS-UTF32-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniCNS-UTF32-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniCNS-UTF8-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniCNS-UTF8-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniGB-UCS2-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniGB-UCS2-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniGB-UTF16-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniGB-UTF16-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniGB-UTF32-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniGB-UTF32-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniGB-UTF8-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniGB-UTF8-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJIS-UCS2-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJIS-UCS2-HW-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJIS-UCS2-HW-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJIS-UCS2-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJIS-UTF16-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJIS-UTF16-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJIS-UTF32-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJIS-UTF32-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJIS-UTF8-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJIS-UTF8-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJIS2004-UTF16-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJIS2004-UTF16-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJIS2004-UTF32-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJIS2004-UTF32-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJIS2004-UTF8-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJIS2004-UTF8-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJISPro-UCS2-HW-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJISPro-UCS2-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJISPro-UTF8-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJISX0213-UTF32-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJISX0213-UTF32-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJISX02132004-UTF32-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniJISX02132004-UTF32-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniKS-UCS2-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniKS-UCS2-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniKS-UTF16-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniKS-UTF16-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniKS-UTF32-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniKS-UTF32-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniKS-UTF8-H.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/UniKS-UTF8-V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/V.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/cmaps/WP-Symbol.bcmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/compressed.tracemonkey-pldi-09.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/debugger.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/annotation-check.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/annotation-comment.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/annotation-help.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/annotation-insert.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/annotation-key.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/annotation-newparagraph.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/annotation-noicon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/annotation-note.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/annotation-paragraph.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/findbarButton-next-rtl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/findbarButton-next-rtl@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/findbarButton-next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/findbarButton-next@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/findbarButton-previous-rtl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/findbarButton-previous-rtl@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/findbarButton-previous.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/findbarButton-previous@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/grab.cur" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/grabbing.cur" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/loading-icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/loading-small.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/loading-small@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-documentProperties.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-documentProperties@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-firstPage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-firstPage@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-handTool.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-handTool@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-lastPage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-lastPage@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-rotateCcw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-rotateCcw@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-rotateCw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-rotateCw@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-scrollHorizontal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-scrollHorizontal@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-scrollVertical.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-scrollVertical@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-scrollWrapped.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-scrollWrapped@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-selectTool.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-selectTool@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-spreadEven.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-spreadEven@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-spreadNone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-spreadNone@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-spreadOdd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/secondaryToolbarButton-spreadOdd@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/shadow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-bookmark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-bookmark@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-download.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-download@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-menuArrows.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-menuArrows@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-openFile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-openFile@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-pageDown-rtl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-pageDown-rtl@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-pageDown.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-pageDown@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-pageUp-rtl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-pageUp-rtl@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-pageUp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-pageUp@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-presentationMode.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-presentationMode@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-print.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-print@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-search.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-search@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-secondaryToolbarToggle-rtl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-secondaryToolbarToggle-rtl@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-secondaryToolbarToggle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-secondaryToolbarToggle@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-sidebarToggle-rtl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-sidebarToggle-rtl@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-sidebarToggle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-sidebarToggle@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-viewAttachments.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-viewAttachments@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-viewOutline-rtl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-viewOutline-rtl@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-viewOutline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-viewOutline@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-viewThumbnail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-viewThumbnail@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-zoomIn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-zoomIn@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-zoomOut.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/toolbarButton-zoomOut@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/treeitem-collapsed-rtl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/treeitem-collapsed-rtl@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/treeitem-collapsed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/treeitem-collapsed@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/treeitem-expanded.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/images/treeitem-expanded@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ach/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/af/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ak/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/an/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ar/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/as/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ast/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/az/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/be/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/bg/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/bn-BD/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/bn-IN/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/br/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/brx/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/bs/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ca/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/cak/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/crh/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/cs/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/csb/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/cy/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/da/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/de/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/el/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/en-CA/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/en-GB/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/en-US/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/en-ZA/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/eo/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/es-AR/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/es-CL/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/es-ES/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/es-MX/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/et/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/eu/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/fa/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ff/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/fi/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/fr/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/fy-NL/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ga-IE/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/gd/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/gl/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/gn/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/gu-IN/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/he/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/hi-IN/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/hr/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/hsb/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/hto/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/hu/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/hy-AM/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ia/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/id/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/is/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/it/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ja/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ka/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/kab/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/kk/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/km/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/kn/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ko/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/kok/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ks/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ku/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/lg/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/lij/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/lo/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/locale.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/lt/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ltg/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/lv/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/mai/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/meh/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/mk/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ml/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/mn/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/mr/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ms/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/my/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/nb-NO/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ne-NP/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/nl/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/nn-NO/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/nso/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/oc/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/or/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/pa-IN/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/pl/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/pt-BR/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/pt-PT/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/rm/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ro/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ru/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/rw/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/sah/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/sat/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/si/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/sk/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/sl/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/son/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/sq/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/sr/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/sv-SE/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/sw/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ta-LK/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ta/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/te/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/th/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/tl/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/tn/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/tr/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/tsz/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/uk/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/ur/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/uz/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/vi/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/wo/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/xh/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/zam/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/zh-CN/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/zh-TW/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/locale/zu/viewer.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/22222222.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/Altair材料库中金属板材的硬化以及破坏数据的准备.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/DiffMerge.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/HyperView在方向盘疲劳分析中的应用.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/HyperWorks在某袋天窗顶盖的刚度分析中应用.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/MotionView在副车间开发中的应用.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/OptiStruct在白车身焊点优化中的应用.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/Radioss Application in Airbag Simulation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/eeeeeee.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/jhjyh.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/kjghj.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/njhg.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/sadsd.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/uuu.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/uuu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/uuuuu.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/一种新型轿车前舱盖结构优化分析.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/一种新型轿车前舱盖结构优化分析.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/基于Altair OptiStruct的精冲压力机机架结构分析与拓扑优化.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/基于HyperStudy传动轴减振圈优化设计.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/基于HyperWorks的发动机罩盖结构优化设计.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/基于HyperWorks的自卸车车架静强度分析.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/基于morph功能的HyperForm多序冲压成形应用.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/基于拓扑优化的车身结构研究.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/定子斜槽月球车驱动电机性能的快速计算.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/弯曲工况下车轮强度疲劳分析方法对比.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/测试.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/混合动力车电池托盘的优化设计.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/熔模铸造工艺优化分析.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/熔模铸造工艺优化分析2.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/熔模铸造工艺优化分析3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/玻纤材料方向对进气格栅行人保护的影响.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/电动汽车动力总成悬置系统优化设计.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/paper_and_info_upload/驱动电机转子结构优化分析.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/pdf/uuuuu.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/viewer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/viewer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/viewer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/sem_vvpp_Web_exploded/pdfjs/web/viewer.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sem_vvpp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sem_vvpp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/PaperInfoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/PaperInfoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/AdminServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/LogoutServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/servlet/addCarouselServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/addCarouselServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/addPaperOrInfoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/addPaperOrInfoServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/homeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/homeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/indexCarouselServlet.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/servlet/indexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/indexServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/listCarouselServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/listCarouselServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/loginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/loginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/DBUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/DBUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/dao/PaperInfoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/dao/PaperInfoDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/LogoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/LogoutServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/addCarouselServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/addCarouselServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/addPaperOrInfoServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/addPaperOrInfoServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/adminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/adminServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/homeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/homeServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/indexServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/indexServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/listCarouselServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/servlet/listCarouselServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/util/DBUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/util/DBUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/admin/carousel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/carousel.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/admin/paper_info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/paper_info.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/red.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/settings.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/theme.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/home.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
     </list>
@@ -60,57 +693,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/servlet/listCarouselServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2">
-              <caret line="255" lean-forward="true" selection-start-line="255" selection-end-line="255" />
+            <state relative-caret-position="572">
+              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#a#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#a#0;n#div#4;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#4;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#th#1;n#thead#0;n#table#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#tbody#0;n#table#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/style.css">
+        <entry file="file://$PROJECT_DIR$/src/servlet/editCarouselServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+            <state relative-caret-position="506">
+              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlet/indexCarouselServlet.java">
+        <entry file="file://$PROJECT_DIR$/src/servlet/editPaperOrInfoServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+            <state relative-caret-position="572">
+              <caret line="26" column="23" selection-start-line="22" selection-start-column="8" selection-end-line="26" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -118,8 +732,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlet/indexServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="622">
+              <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -128,62 +742,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/home.jsp">
+        <entry file="file://$PROJECT_DIR$/src/servlet/homeServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="158" column="80" selection-start-line="158" selection-start-column="80" selection-end-line="158" selection-end-column="80" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/admin/carousel.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="261" column="5" selection-start-line="261" selection-start-column="5" selection-end-line="261" selection-end-column="5" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#a#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#b#0;n#p#0;n#a#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h3#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/admin/paper_info.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="230" column="32" selection-start-line="230" selection-start-column="32" selection-end-line="230" selection-end-column="32" />
-              <folding>
-                <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#b#0;n#p#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#a#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h3#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlet/addPaperOrInfoServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="618">
+              <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -192,10 +754,55 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlet/addCarouselServlet.java">
+        <entry file="file://$PROJECT_DIR$/src/servlet/LogoutServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="396">
+              <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/servlet/loginServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="638">
+              <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/servlet/updateCarouselServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/util/DBUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="94">
+              <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/servlet/updatePaperOrInfoServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="676">
+              <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -236,6 +843,12 @@
       <find>info</find>
       <find>admin/</find>
       <find>change2</find>
+      <find>pagi</find>
+      <find>add</find>
+      <find>.pagination li</find>
+      <find>add-icon_relative</find>
+      <find>inputEmail3</find>
+      <find>home</find>
     </findStrings>
     <replaceStrings>
       <replace>admin/</replace>
@@ -252,8 +865,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/login.html" />
-        <option value="$PROJECT_DIR$/src/LoginServlet.java" />
         <option value="$PROJECT_DIR$/web/backstage.jsp" />
         <option value="$PROJECT_DIR$/src/servlet/BackServletFilter" />
         <option value="$PROJECT_DIR$/src/filter/Auth.java" />
@@ -268,47 +879,50 @@
         <option value="$PROJECT_DIR$/src/servlet/AdminServlet.java" />
         <option value="$PROJECT_DIR$/src/servlet/loadLoginPageServlet.java" />
         <option value="$PROJECT_DIR$/web/css/main.css" />
-        <option value="$PROJECT_DIR$/src/dao/PaperInfoDAO.java" />
-        <option value="$PROJECT_DIR$/src/servlet/LogoutServlet.java" />
         <option value="$PROJECT_DIR$/src/servlet/LoginServlet.java" />
         <option value="$PROJECT_DIR$/web/admin.jsp" />
         <option value="$PROJECT_DIR$/web/admin-carousel.jsp" />
-        <option value="$PROJECT_DIR$/src/servlet/homeServlet.java" />
-        <option value="$PROJECT_DIR$/src/servlet/loginServlet.java" />
         <option value="$PROJECT_DIR$/src/servlet/editPaperOrInfoServlet.java" />
-        <option value="$PROJECT_DIR$/src/servlet/addPaperOrInfoServlet.java" />
         <option value="$PROJECT_DIR$/src/servlet/deletePaperInfoServlet.java" />
         <option value="$PROJECT_DIR$/src/servlet/updatePaperOrInfoServlet.java" />
         <option value="$PROJECT_DIR$/src/servlet/deleteCarouselServlet.java" />
         <option value="$PROJECT_DIR$/src/servlet/editCarouselServlet.java" />
-        <option value="$PROJECT_DIR$/src/servlet/updateCarouselServlet.java" />
         <option value="$PROJECT_DIR$/src/TestMain.java" />
         <option value="$PROJECT_DIR$/web/admin_paper_info.jsp" />
         <option value="$PROJECT_DIR$/web/admin_carousel.jsp" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/src/servlet/adminServlet.java" />
         <option value="$PROJECT_DIR$/src/dao/CarouselDAO.java" />
-        <option value="$PROJECT_DIR$/src/servlet/listCarouselServlet.java" />
         <option value="$PROJECT_DIR$/src/filter/AuthFilter.java" />
         <option value="$PROJECT_DIR$/web/js/app.js" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/servlet/indexCarouselServlet.java" />
-        <option value="$PROJECT_DIR$/web/admin/carousel.jsp" />
-        <option value="$PROJECT_DIR$/web/admin/paper_info.jsp" />
         <option value="$PROJECT_DIR$/web/css/red.css" />
         <option value="$PROJECT_DIR$/web/css/settings.css" />
         <option value="$PROJECT_DIR$/web/css/style.css" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/web/css/theme.css" />
+        <option value="$PROJECT_DIR$/src/dao/PaperInfoDAO.java" />
+        <option value="$PROJECT_DIR$/src/servlet/loginServlet.java" />
+        <option value="$PROJECT_DIR$/src/config.properties" />
         <option value="$PROJECT_DIR$/web/home.jsp" />
-        <option value="$PROJECT_DIR$/src/servlet/indexServlet.java" />
-        <option value="$PROJECT_DIR$/src/servlet/addCarouselServlet.java" />
         <option value="$PROJECT_DIR$/web/login.jsp" />
+        <option value="$PROJECT_DIR$/web/admin/carousel.jsp" />
+        <option value="$PROJECT_DIR$/src/servlet/addPaperOrInfoServlet.java" />
+        <option value="$PROJECT_DIR$/src/servlet/addCarouselServlet.java" />
+        <option value="$PROJECT_DIR$/src/servlet/adminServlet.java" />
+        <option value="$PROJECT_DIR$/src/servlet/homeServlet.java" />
+        <option value="$PROJECT_DIR$/src/servlet/LogoutServlet.java" />
+        <option value="$PROJECT_DIR$/web/admin/paper_info.jsp" />
+        <option value="$PROJECT_DIR$/src/servlet/listCarouselServlet.java" />
+        <option value="$PROJECT_DIR$/src/servlet/indexServlet.java" />
+        <option value="$PROJECT_DIR$/src/servlet/updateCarouselServlet.java" />
+        <option value="$PROJECT_DIR$/src/util/DBUtil.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="197" />
-    <option name="width" value="1215" />
-    <option name="height" value="1054" />
+    <option name="x" value="-7" />
+    <option name="width" value="1932" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -334,7 +948,24 @@
               <item name="sem_vvpp" type="b2602c69:ProjectViewProjectNode" />
               <item name="sem_vvpp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sem_vvpp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sem_vvpp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sem_vvpp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sem_vvpp" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sem_vvpp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sem_vvpp" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -348,23 +979,23 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib/fastjson-1.2.7.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/out" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.3082353" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\learning\project\sem_vvpp\sem_vvpp\web\WEB-INF\lib" />
-      <recent name="D:\learning\project\sem_vvpp\sem_vvpp\lib" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\learning\project\sem_vvpp\sem_vvpp\web\admin" />
       <recent name="D:\learning\project\sem_vvpp\sem_vvpp\lib" />
       <recent name="D:\learning\project\sem_vvpp\sem_vvpp" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\learning\project\sem_vvpp\sem_vvpp\web\WEB-INF\lib" />
+      <recent name="D:\learning\project\sem_vvpp\sem_vvpp\lib" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -380,7 +1011,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.tomcat7">
-    <configuration name="TestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="TestMain" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TestMain" />
       <module name="sem_vvpp" />
       <method v="2">
@@ -388,12 +1019,13 @@
       </method>
     </configuration>
     <configuration name="tomcat7" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.64" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:80" />
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
-      <option name="UPDATING_POLICY" value="update-resources" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="sem_vvpp:Web exploded">
+        <artifact name="sem_vvpp">
           <settings>
-            <option name="CONTEXT_PATH" value="/" />
+            <option name="CONTEXT_PATH" value="/sem_vvpp" />
           </settings>
         </artifact>
       </deployment>
@@ -456,7 +1088,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="sem_vvpp:Web exploded" />
+          <artifact name="sem_vvpp" />
         </option>
       </method>
     </configuration>
@@ -464,11 +1096,6 @@
       <item itemvalue="Application.TestMain" />
       <item itemvalue="Tomcat Server.tomcat7" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.TestMain" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -487,7 +1114,8 @@
       <workItem from="1564555249661" duration="68342000" />
       <workItem from="1564887166095" duration="9775000" />
       <workItem from="1565010272075" duration="1647000" />
-      <workItem from="1565081322924" duration="48883000" />
+      <workItem from="1565081322924" duration="104158000" />
+      <workItem from="1565858602214" duration="4290000" />
     </task>
     <task id="LOCAL-00001" summary="7/25">
       <created>1564047426648</created>
@@ -559,37 +1187,53 @@
       <option name="project" value="LOCAL" />
       <updated>1564905830903</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="7/31 night">
+      <created>1565602790626</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1565602790627</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223848000" />
+    <option name="totallyTimeSpent" value="283413000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49770993" weight="0.2360515" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49609983" visible="true" weight="0.17328326" />
+      <window_info id="Structure" order="1" sideWeight="0.5039002" side_tool="true" weight="0.17113733" />
       <window_info id="Web" order="2" sideWeight="0.5022625" side_tool="true" weight="0.16416308" />
       <window_info id="Designer" order="3" />
       <window_info id="Favorites" order="4" sideWeight="0.50229007" side_tool="true" weight="0.16630901" />
       <window_info anchor="bottom" id="Statistic" order="0" weight="0.7147689" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32919955" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.43517473" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3404735" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32919955" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32919955" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32919955" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005365" side_tool="true" weight="0.957159" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.621195" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32356256" />
-      <window_info anchor="bottom" id="Application Servers" order="13" weight="0.3289183" />
-      <window_info anchor="bottom" id="Java Enterprise" order="14" />
-      <window_info anchor="bottom" id="Run" order="15" visible="true" weight="0.19842164" />
+      <window_info anchor="bottom" id="Application Servers" order="13" weight="0.32807216" />
+      <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.32919955" />
+      <window_info anchor="bottom" id="Run" order="15" sideWeight="0.49946353" weight="0.65163475" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -597,35 +1241,6 @@
       <window_info anchor="right" id="Database" order="4" weight="0.3299356" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16416308" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Web" order="2" side_tool="true" />
-      <window_info id="Designer" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Statistic" order="0" weight="0.7147689" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.32919955" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.25253665" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.43517473" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32919955" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.621195" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32807216" />
-      <window_info anchor="bottom" id="Application Servers" order="14" weight="0.3289183" />
-      <window_info anchor="bottom" id="Java Enterprise" order="15" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.3299356" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -695,32 +1310,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/dao/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="124" column="34" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bean/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/ForeServletFilter.java" />
-    <entry file="file://$PROJECT_DIR$/web/js/canvas-nest.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/filter/BackServletFilter.java" />
-    <entry file="file://$PROJECT_DIR$/src/bean/Carousel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bean/PaperInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -792,42 +1381,8 @@
         <state relative-caret-position="-594" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/Page.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="62" column="34" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/servlet/listPaperOrInfoServlet.java" />
-    <entry file="file://$PROJECT_DIR$/src/dao/PaperInfoDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/updatePaperOrInfoServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="19" column="41" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TestMain.java" />
-    <entry file="file://$PROJECT_DIR$/src/servlet/updateCarouselServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/filter/Auth.java" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -836,41 +1391,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/CarouselDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1826">
-          <caret line="94" column="23" selection-start-line="94" selection-start-column="23" selection-end-line="94" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/deleteCarouselServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/message.jsp" />
     <entry file="file://$PROJECT_DIR$/web/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/filter/AuthFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -891,47 +1416,159 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/LogoutServlet.java">
+    <entry file="file://$PROJECT_DIR$/web/css/red.css" />
+    <entry file="file://$PROJECT_DIR$/web/css/settings.css" />
+    <entry file="file://$PROJECT_DIR$/web/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        <state relative-caret-position="242">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="438" column="30" selection-start-line="438" selection-start-column="30" selection-end-line="438" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/CarouselDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1386">
+          <caret line="51" column="43" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/loginServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/dao/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="32" column="65" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
+        <state relative-caret-position="-1604">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/listCarouselServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/dao/PaperInfoDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-end-line="25" />
+        <state relative-caret-position="1520">
+          <caret line="128" column="55" selection-start-line="128" selection-start-column="55" selection-end-line="128" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/filter/AuthFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="39" column="93" selection-start-line="39" selection-start-column="93" selection-end-line="39" selection-end-column="93" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/editPaperOrInfoServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/util/Page.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="178">
+          <caret line="62" column="34" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-110">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/awt/image/BufferedImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="888">
+          <caret line="973" column="16" selection-start-line="973" selection-start-column="16" selection-end-line="973" selection-end-column="16" />
+          <folding>
+            <element signature="e#43542#43543#0" expanded="true" />
+            <element signature="e#43582#43583#0" expanded="true" />
+            <element signature="e#43750#43751#0" expanded="true" />
+            <element signature="e#43791#43792#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3410">
+          <caret line="155" column="74" selection-start-line="155" selection-start-column="74" selection-end-line="155" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2376">
+          <caret line="108" column="54" selection-start-line="108" selection-start-column="54" selection-end-line="108" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="27" selection-start-column="18" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/admin/carousel.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="220" column="41" selection-start-line="220" selection-start-column="41" selection-end-line="220" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/admin/paper_info.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="247" column="69" selection-start-line="247" selection-start-column="69" selection-end-line="247" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/adminServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="622">
+          <caret line="42" column="66" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/editCarouselServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/servlet/addCarouselServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        <state relative-caret-position="572">
+          <caret line="61" column="16" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/addPaperOrInfoServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="71" column="119" selection-start-line="71" selection-start-column="87" selection-end-line="71" selection-end-column="119" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/deleteCarouselServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -940,84 +1577,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/servlet/deletePaperInfoServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="578">
+          <caret line="27" column="66" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/adminServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/servlet/editCarouselServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+        <state relative-caret-position="506">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/homeServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/admin/paper_info.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="230" column="32" selection-start-line="230" selection-start-column="32" selection-end-line="230" selection-end-column="32" />
-          <folding>
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#b#0;n#p#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#a#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/red.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/settings.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="3" lean-forward="true" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="158" column="80" selection-start-line="158" selection-start-column="80" selection-end-line="158" selection-end-column="80" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1029,20 +1602,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/addPaperOrInfoServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/servlet/editPaperOrInfoServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="572">
+          <caret line="26" column="23" selection-start-line="22" selection-start-column="8" selection-end-line="26" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/addCarouselServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/servlet/updatePaperOrInfoServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="676">
+          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/updateCarouselServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/LogoutServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/loginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/listCarouselServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1051,53 +1664,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/servlet/indexServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="622">
+          <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/admin/carousel.jsp">
+    <entry file="file://$PROJECT_DIR$/src/servlet/homeServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="261" column="5" selection-start-line="261" selection-start-column="5" selection-end-line="261" selection-end-column="5" />
+        <state relative-caret-position="618">
+          <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#a#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#b#0;n#p#0;n#a#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+    <entry file="file://$PROJECT_DIR$/src/util/DBUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="255" lean-forward="true" selection-start-line="255" selection-end-line="255" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#4;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#4;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#th#1;n#thead#0;n#table#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tbody#0;n#table#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="94">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1107,11 +1695,11 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>sem_vvpp:Web exploded</last-edited>
+          <last-edited>sem_vvpp</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3082353" />
                 <option value="0.5" />
               </list>
             </option>
@@ -1124,7 +1712,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3082353" />
               </list>
             </option>
           </splitter-proportions>
@@ -1159,7 +1747,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3082353" />
               </list>
             </option>
           </splitter-proportions>
@@ -1179,11 +1767,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>mysql-connector-java-5.0.8-bin</last-edited>
+          <last-edited>lib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3082353" />
               </list>
             </option>
           </splitter-proportions>

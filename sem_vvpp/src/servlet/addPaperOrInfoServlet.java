@@ -61,7 +61,7 @@ public class addPaperOrInfoServlet extends HttpServlet {
         paperInfo.setTitle(paperOrInfoTitle);
         paperInfo.setAuthor(paperOrInfoAuthor);
         paperInfo.setType(paperOrInfoType);
-        paperInfo.setPath(uploadFilePath.getAbsolutePath() + File.separator + fileName);
+        paperInfo.setPath(fileName);
 
         paperInfoDAO.add(paperInfo);
 
@@ -69,6 +69,6 @@ public class addPaperOrInfoServlet extends HttpServlet {
 
         java.io.PrintWriter out2 = response.getWriter();
 
-        out2.print("<script language='javascript'>alert('上传成功！');window.location.href='/admin/paper_info';</script>");
+        out2.print("<script language='javascript'>alert('上传成功！');window.location.href='" + request.getContextPath() + "/admin/paper_info';</script>");
     }
 }

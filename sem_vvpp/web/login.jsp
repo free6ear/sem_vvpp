@@ -9,11 +9,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta content='text/html;charset=utf-8' http-equiv='Content-Type'>
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css">
     <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.css">
-    <script src="./js/jquery/2.0.0/jquery.min.js"></script>
-    <link href="./css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
-    <script src="./js/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="${pageContext.request.contextPath}/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="${pageContext.request.contextPath}/js/bootstrap/3.3.6/bootstrap.min.js"></script>
     <title>登录</title>
     <link rel="shortcut icon" href="./imgs/login_icon.png">
     <style type="text/css">
@@ -88,16 +88,7 @@
 
         a:active{
             text-decoration:none;
-        }/* 指正在点的链接*/ 
-
-        #login-button:hover {
-            background-color: #96281b;
-            color: white;
-        }
-        #login-button:active {
-            background-color: #cf000f;
-            color: white;
-        }
+        }/* 指正在点的链接*/
 
         .btn.disabled {
             filter: alpha(opacity=65);
@@ -115,11 +106,33 @@
             color: black;
         }
 
+        #change1{
+            color: dimgrey;
+            text-decoration:none;
+        }
+        #change2{
+            color: dimgrey;
+            text-decoration:none;
+        }
+        #change1:hover {
+            color: #cf000f;
+            text-decoration:none;
+        }
+        #change1:active {
+            color: #cf000f;
+            text-decoration:none;
+        }
+        #change2:hover {
+            color: #cf000f;
+            text-decoration:none;
+        }
+        #change2:active {
+            color: #cf000f;
+            text-decoration:none;
+        }
+
         .form-control:focus {
             border-color: #f1a9a0;
-        }
-        #login-switch-button:hover {
-            color: #cf000f;
         }
         body{
             perspective: 1000px;
@@ -131,16 +144,16 @@
         <div class="row" style="height: 11vh">
         <!--Header logo--> 
         <div class="col-xs-6" style="text-align: left">
-                <img src="./imgs/main_logo.png" class="center-vertical" style=" height: 60px; width: auto; margin-left: 30px">
+                <img src="${pageContext.request.contextPath}/imgs/main_logo.png" class="center-vertical" style=" height: 60px; width: auto; margin-left: 30px">
             </div> 
             <div class="col-xs-6" style="text-align: center">
-                <img src="./imgs/CAE_logo_black.png" class="center-vertical" style="margin-top: -10px; width: 80%">
+                <img src="${pageContext.request.contextPath}/imgs/CAE_logo_black.png" class="center-vertical" style="margin-top: -10px; width: 80%">
             </div>
          
         </div>
         <!--Body-->
-        <div class="row clearfix bg-primary" style="height: 507px;">
-            <div class="col-xs-6">
+        <div class="row clearfix bg-primary" style="height: 511px; overflow: hidden">
+            <div class="col-xs-6" style="min-height: 511px; height: 511px">
                 <!--Carousel model-->
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
@@ -163,57 +176,52 @@
                 <div class="row">
                     <div class="login-box">
                         <!--内容管理员登录-->
-                        <div class="card front" id="front">
+                        <div class="card front" id="front"  hidden>
                             <div class="col-xs-8 col-xs-offset-2">
                                 <form class="form-horizontal" method="post" action="login" style="text-align:center; margin: -35px -100px; transform: translateY(32%)">
-                                    <span class="heading">内容管理员登录</span>
+                                    <span class="heading">门户管理员登录</span>
                                     <div class="form-group">
                                         <i class="fa fa-user"></i>
-                                        <input type="text" class="form-control" id="inputEmail3" name="username" placeholder="用户名">
+                                        <input type="text" class="form-control" id="inputEmail3" name="admin-username" placeholder="用户名">
                                     </div>
                                     <div class="form-group help">
-                                        <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="密　码">
+                                        <input type="password" class="form-control" id="inputPassword3" name="admin-password" placeholder="密　码">
                                         <i class="fa fa-lock"></i>
                                     </div>
                                     <div class="pull-right" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">
-                                        <font class="errorMessage"></font>
+                                        <font class="errorMessage" id="admin-login-message"></font>
 
                                     </div>
-                                    <div class="pull-right" id="loginErrorMessageDiv" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">
-                                        ${msg}
-                                    </div>
                                     <div class="form-group" id="login-switch">
-                                        <!-- <a href=""> -->
-                                        <a><span class="text" id="change1" style="color: rgba(46, 49, 49, 0.8)"><u>我是管理员用户</u></span></a>
-                                        <!-- </a> -->
-                                        <button type="submit" id="login-button" class="btn btn-default" style="outline:none">登录</button>
+                                        <button type="button" id="change1" class="btn-link pull-left">我是平台用户</button>
+                                        <button type="button" onclick="adminLogin()" id="login-button" class="btn btn-default" style="outline:none">登录</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                         <!--普通用户登录-->
-                        <div class="card back" id="back" hidden>
+                        <div class="card back" id="back">
                             <div class="col-xs-8 col-xs-offset-2">
                                 <form class="form-horizontal" method="post" style="text-align:center; margin: -35px -100px; transform: translateY(32%)">
-                                    <span class="heading">普通用户登录</span>
+                                    <span class="heading">平台用户登录</span>
                                     <div class="form-group">
                                         <i class="fa fa-user"></i>
-                                        <input type="text" class="form-control" id="inputEmail2" name="" placeholder="用户名">
+                                        <input type="text" class="form-control" id="inputEmail2" name="normal-user" placeholder="用户名">
                                     </div>
                                     <div class="form-group help">
-                                        <input type="password" class="form-control" id="inputPassword2" name="" placeholder="密　码">
+                                        <input type="password" class="form-control" id="inputPassword2" name="normal-password" placeholder="密　码">
                                         <i class="fa fa-lock"></i>
                                     </div>
                                     <div class="pull-right" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">
-                                        <font class="errorMessage"></font>
+                                        <font class="errorMessage" id="normal-login-message"></font>
 
                                     </div>
-                                    <div class="pull-right" id="loginErrorMessageDiv2" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">
-                                        ${msg}
-                                    </div>
+<%--                                    <div class="pull-right" id="loginErrorMessageDiv2" style="font-size: 3px; color: #cf000f; margin-top: -20px; margin-right: 40px">--%>
+<%--                                        ${msg2}--%>
+<%--                                    </div>--%>
                                     <div class="form-group" id="login-switch2s">
-                                        <a><span class="text" id="change2" style="color: rgba(46, 49, 49, 0.8)"><u>我是普通用户</u></span></a>
-                                        <button type="button" id="login-button2" class="btn btn-default" style="outline:none">登录</button>
+                                        <button type="button" id="change2"  class="btn-link pull-left">我是门户管理员</button>
+                                        <button type="button" onclick="normalLogin()" id="login-button2" class="btn btn-default" style="outline:none">登录</button>
                                     </div>
                                 </form>
                             </div>
@@ -229,7 +237,7 @@
                 <table class="table">
                     <thead style="display: table; width: 96.5%">
                         <th><h3 style="color: #cf000f; margin-bottom: -5px; margin-left: -5px"><b>论文/资讯</b></h3></th>
-                        <th style="text-align: right"><a href="/home"><img src="./imgs/more_icon.png" style="height: 20px; width:20px;  margin-bottom: -10px; margin-right: -8px;"></a></th>
+                        <th style="text-align: right"><a href="${pageContext.request.contextPath}/home"><img src="${pageContext.request.contextPath}/imgs/more_icon.png" style="height: 20px; width:20px;  margin-bottom: -10px; margin-right: -8px;"></a></th>
                     </thead>
                     <tbody style="display: table; width: 96.5%">
                         <c:forEach items="${pis}" var = "pi" varStatus="status">
@@ -241,7 +249,7 @@
                                                 String token = "web" + File.separator;
                                                 request.setAttribute("token", token);
                                             %>
-                                            <font size="4"><a href="./pdfjs/web/viewer.html?file=${fn:substring(pi.path, fn:indexOf(pi.path, token) + 4, fn:length(pi.path))}" target=_blank>${pi.title}</a></font>
+                                            <font size="4"><a href="${pageContext.request.contextPath}/pdfjs/web/viewer.html?file=/pdfjs/web/paper_and_info_upload/${pi.path}" target=_blank>${pi.title}</a></font>
                                             <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">资讯</button>
                                         </td>
                                     </tr>
@@ -249,7 +257,7 @@
                                 <c:when test="${pi.type == '论文'}">
                                     <tr>
                                         <td>
-                                            <font size="4">&nbsp;${pi.author} 于 <fmt:formatDate pattern="yyyy年M月d日" value="${pi.createDate}" /> 发表了<a href="./pdfjs/web/viewer.html?file=${fn:substring(pi.path, fn:indexOf(pi.path, token) + 4, fn:length(pi.path))}" target=_blank>《${pi.title}》</a></font>
+                                            <font size="4">&nbsp;${pi.author} 于 <fmt:formatDate pattern="yyyy年M月d日" value="${pi.createDate}" /> 发表了<a href="./pdfjs/web/viewer.html?file=/pdfjs/web/paper_and_info_upload/${pi.path}" target=_blank>《${pi.title}》</a></font>
                                             <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
                                         </td>
                                     </tr>
@@ -262,12 +270,59 @@
         </div>
     </div>
     <script type="text/javascript" color="214,69,65" opacity='1' zIndex="-2" count="99" src="./js/canvas-nest.js"></script>
-    <script src="./pdfjs/build/pdf.js"></script>
-    <script src="./pdfjs/build/pdf.worker.js"></script>
+    <script src="${pageContext.request.contextPath}/pdfjs/build/pdf.js"></script>
+    <script src="${pageContext.request.contextPath}/pdfjs/build/pdf.worker.js"></script>
     <script>
-        $("form.form-horizontal").submit(function(){
+        function normalLogin() {
+            var username = $('#inputEmail2').val();
+            var password = $('#inputPassword2').val();
+
+            $.ajax({
+                    url:"/hwe/services/awpf/platform/authentication/login",
+                    data:JSON.stringify({"j_username":username,"j_password":password,"appId":"hsm"}),
+                    method:"post",
+                    contentType:"application/json",
+                    success:function () {
+                        location.href = "/dashboard";
+                    },
+                    error:function (result) {
+                        console.log(result);
+                        $("#normal-login-message").html(result.responseJSON.operationMessage);
+                    }
+            });
+
+        }
+        function adminLogin() {
+            var admin_username = $('#inputEmail3').val();
+            var admin_password = $('#inputPassword3').val();
+            $.ajax({
+                url:"${pageContext.request.contextPath}/admin-login",
+                data:"username="+ admin_username+ "&password=" + admin_password,
+                method:"post",
+                // contentType:"application/json",
+                success:function () {
+                    location.href = "${pageContext.request.contextPath}/admin/paper_info";
+                },
+                error:function (result) {
+                    $("#admin-login-message").html(result.responseText);
+                }
+            });
+        }
+        $("#back").submit(function(){
             if(0==$("#inputEmail3").val().length||0==$("#inputPassword3").val().length){
                 $("font.errorMessage").html("请输入账号密码");
+                return false;
+            }
+            return true;
+        });
+        $("form.form-horizontal input").keyup(function(){
+            $("div#loginErrorMessageDiv").hide();
+            $("font.errorMessage").empty();
+        });
+
+        $("form.form-horizontal").submit(function(){
+            if(0==$("#inputEmail3").val().length||0==$("#inputPassword3").val().length){
+                $("font.errorMessage").html(result.responseJSON.operationMessage);
                 return false;
             }
             return true;
@@ -295,7 +350,7 @@
                 <c:if test="${status.index == 0}">
                     $('#carousel').append(
                         "<div class='item active'>" +
-                        "<img src='/pdfjs/web/carousel_upload/${c.path}' alt='test' style='width: 50vw'>" +
+                        "<img src='${pageContext.request.contextPath}/pdfjs/web/carousel_upload/${c.path}' alt='test' style='width: 50vw'>" +
                         "<div class='carousel-caption'>" +
                         "<h1><b>${c.title}</b></h1>" +
                         "</div>" +
@@ -305,7 +360,7 @@
                 <c:if test="${status.index != 0}">
                 $('#carousel').append(
                     "<div class='item'>" +
-                    "<img src='/pdfjs/web/carousel_upload/${c.path}' alt='test' style='width: 50vw'>" +
+                    "<img src='${pageContext.request.contextPath}/pdfjs/web/carousel_upload/${c.path}' alt='test' style='width: 50vw；height: 300px'>" +
                     "<div class='carousel-caption'>" +
                     "<h1><b>${c.title}</b></h1>" +
                     "</div>" +

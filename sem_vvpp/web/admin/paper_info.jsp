@@ -18,23 +18,32 @@
     <style>
         #add-icon_relative {
             position: absolute;
-            left: 80%;
-            top: 2.3%;
+            left: 82%;
+            top: 1.9%;
         }
         .modal-body {
             position: relative;
             padding: 15px 40px;
         }
-        .pagination {
-            display: inline-block;
-            padding-left: 0;
-            margin: 34px 0;
-            border-radius: 4px;
+        .pagination li a.page-link {
+            color: #cf000f;
+            background-color: transparent;
+            font-size: 19px;
+            font-weight: 500;
+            line-height: 26px;
+            height: 35px;
+            width: 35px;
+            margin: -8px 5px 5px;
+            border: none;
+            border-radius: 0;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s ease 0s;
         }
         .pagination>li>a, .pagination>li>span {
             position: relative;
             float: left;
-            padding: 6px 0px;
+            padding: 6px 0;
             margin-left: -1px;
             line-height: 1.42857143;
             color: #337ab7;
@@ -191,10 +200,6 @@
             color: #cf000f;
             text-decoration: none;
         }
-        #glyphicon-plus-sign-trash:hover {
-            color: #96281b;
-            text-decoration: none;
-        }
         .center-vertical{
             position: relative;
             top: 50%;
@@ -212,26 +217,35 @@
         .table>tbody>tr>td {
             border-top: 2px solid #ddd;
         }
+        .pagination {
+            display: inline-block;
+            padding-left: 0;
+            margin: 0 0;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
     <div class="wrapper" style="min-width: 900px">
         <div  class="sidebar clearfix" style="position:fixed" data-color="red">
             <div class="logo">
-                <a class="simple-text" href="/admin/paper_info"><img src="../imgs/back_brand.png" alt="后台管理系统"></a>
+                <a class="simple-text" href="${pageContext.request.contextPath}/admin/paper_info"><img src="../imgs/back_brand.png" alt="后台管理系统"></a>
             </div>
             <div class="sidebar-wrapper">
                     <ul class="nav" id="tab">
-                        <li class="list" style="background-color: #fff1f0">
-                            <a href="/admin/paper_info">
+                        <li class="list" style="background-color: #fff1f0; height: 120px;">
+                            <a href="#">
                                 <i class="glyphicon glyphicon-list-alt" style="font-size: 23px; color: #cf000f"></i>
                                 <p>
                                     <b style="font-size: 21px; color: #cf000f">论文资讯</b>
                                 </p>
                             </a>
+                            <a data-toggle="modal" data-target="#addCarouselModal" data-toggle="tooltip" data-placement="bottom">
+                                <button class="btn btn-danger pull-right">新增</button>
+                            </a>
                         </li>
                         <li class="list">
-                            <a href="/admin/carousel">
+                            <a href="${pageContext.request.contextPath}/admin/carousel">
                                 <i class="glyphicon glyphicon-picture" style="font-size: 23px"></i>
                                 <p>
                                     <b style="font-size: 20px">轮播图</b>
@@ -256,23 +270,16 @@
                             <a>欢迎你， <span class="badge" style="position:initial"><%=username %></span></a>
                         </li>
                         <li>
-                            <a href="logout"><span class="glyphicon glyphicon-log-out" style="margin-top: 4px"></span> 注销</a>
+                            <a href="logout"><span class="glyphicon glyphicon-log-out" style="margin-top: 4px"></span>注销</a>
                         </li>
                     </ul>
                 </div>
             </nav>
             <div class="row">
-                <div id="add-icon_relative" style="z-index:9999">
-                    <a data-toggle="modal" data-target="#addPaperInfoModal" data-toggle="tooltip" data-placement="bottom"
-                       title="新增论文资讯">
-                        <i class="glyphicon glyphicon-plus-sign" id="glyphicon-plus-sign-trash" style="color: #cf000f; font-size: 30px"></i>
-                    </a>
-                </div>
                 <div class="tab-content">
                     <!--论文资讯管理-->
-                    <div class="col-xs-12" id="editPaperContent"  style="height: 600px">
-
-                        <table class="table table-hover" style="margin-top: -17px; margin-bottom: 12px" >
+                    <div class="col-xs-12" id="editPaperContent">
+                        <table class="table table-hover" style="margin-top: -17px; margin-bottom: 12px">
                             <thead class="row" style="color: #cf000f; margin-top: 20px; margin-bottom: -10px">
                                 <th class="col-xs-1" style="text-align: center">序号</th>
                                 <th class="col-xs-1" style="text-align: center">类型</th>
@@ -308,8 +315,8 @@
                         </table>
                         <!--底部分页-->
                         <div class="row clearfix">
-                            <div class="col-md-12 column" style="margin-top: -28px">
-                                <div class="demo" style="min-height: 30px;">          
+                            <div class="col-md-12 column">
+                                <div class="demo" style="min-height: 30px;">
                                     <div class="row pad-15">
                                         <div class="col-md-12">
                                             <nav class="pagination-outer" aria-label="Page navigation">
@@ -368,7 +375,7 @@
     <div class="modal fade" id="editPaperInfoModal" tabindex="-1" role="dialog" aria-labelledby="editPaperInfoModalTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form method="get" action="/admin/update_paper_info">
+                <form method="get" action="${pageContext.request.contextPath}/admin/update_paper_info">
                     <div class="modal-header">
                         <h3 class="modal-title" id="editPaperInfoModalTitle" style="text-align: center; font-weight: bolder">编辑论文资讯</h3>
                     </div>
@@ -400,7 +407,7 @@
     <div class="modal fade" id="addPaperInfoModal" tabindex="-1" role="dialog" aria-labelledby="addPaperInfoModalTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form role="form" method="post" style="font-size: 18px" action="/admin/add_paper_info" enctype="multipart/form-data">
+                <form role="form" method="post" style="font-size: 18px" action="${pageContext.request.contextPath}/admin/add_paper_info" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h3 class="modal-title" id="addPaperInfoModalTitle" style="text-align: center; font-weight: bolder">新增论文资讯</h3>
                     </div>
@@ -434,7 +441,7 @@
     <div class="modal fade" id="deletePaperInfoModal" tabindex="-1" role="dialog" aria-labelledby="deletePaperInfoModalTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form method="get" action="/admin/delete_paper_info">
+                <form method="get" action="${pageContext.request.contextPath}/admin/delete_paper_info">
                     <div class="modal-header">
                         <h2 class="modal-title" id="deletePaperInfoModalTitle" style="font-weight: bolder">提醒</h2>
                         <input id="paper-info-delete-id" type="hidden" name="paper-info-delete-id">
@@ -464,7 +471,7 @@
             $("ul.pagination li.disabled a").removeAttr('href');
         });
         function editPaperInfo(id) {
-            $.ajax({url:"/admin/edit_paper_info?id=" + id, method:"get", contentType:"application/json", success:function (result) {
+            $.ajax({url:"${pageContext.request.contextPath}/admin/edit_paper_info?id=" + id, method:"get", contentType:"application/json", success:function (result) {
                     $('#paper-info-id').val(result.id);
                     $('#paper-info-title').val(result.title);
                     $('#paper-info-author').val(result.author);

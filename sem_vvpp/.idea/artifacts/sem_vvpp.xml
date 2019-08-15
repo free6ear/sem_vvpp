@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="sem_vvpp">
+    <output-path>$PROJECT_DIR$/out</output-path>
+    <root id="archive" name="sem_vvpp.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="sem_vvpp" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="mysql-connector-java-5.0.8-bin.jar" module-name="sem_vvpp" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="sem_vvpp/web/Web" />
+    </root>
+  </artifact>
+</component>

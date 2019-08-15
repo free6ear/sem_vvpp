@@ -24,7 +24,7 @@ public class listCarouselServlet extends HttpServlet {
 
         request.setAttribute("cs", cs);
 
-        request.getRequestDispatcher(request.getContextPath() + "/admin/carousel.jsp").forward(request, response);
+        request.getRequestDispatcher( "/admin/carousel.jsp").forward(request, response);
 
     }
 }

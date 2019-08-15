@@ -18,8 +18,8 @@
     <style>
         #add-icon_relative {
             position: absolute;
-            left: 80%;
-            top: 2.3%;
+            left: 5%;
+            top: 30%;
         }
         .modal-body {
             position: relative;
@@ -230,12 +230,15 @@
                         </p>
                     </a>
                 </li>
-                <li class="list" style="background-color: #fff1f0">
-                    <a href="/admin/carousel">
+                <li class="list" style="background-color: #fff1f0; height: 120px">
+                    <a href="#">
                         <i class="glyphicon glyphicon-picture" style="font-size: 23px; color: #cf000f"></i>
                         <p>
                             <b style="font-size: 20px; color: #cf000f">轮播图</b>
                         </p>
+                    </a>
+                    <a data-toggle="modal" data-target="#addCarouselModal" data-toggle="tooltip" data-placement="bottom">
+                        <button class="btn btn-danger pull-right">新增</button>
                     </a>
                 </li>
             </ul>
@@ -262,12 +265,7 @@
             </div>
         </nav>
         <div class="row">
-            <div id="add-icon_relative" style="z-index:9999">
-                <a data-toggle="modal" data-target="#addCarouselModal" data-toggle="tooltip" data-placement="bottom"
-                   title="新增轮播图">
-                    <i class="glyphicon glyphicon-plus-sign" id="glyphicon-plus-sign-trash" style="color: #cf000f; font-size: 30px"></i>
-                </a>
-            </div>
+
             <div class="tab-content">
                 <!--编辑轮播图-->
                 <div class="col-xs-12" id="editCarouselContent">
@@ -275,7 +273,7 @@
                         <tbody style="margin-top: -5px">
                         <c:forEach items="${cs}" var = "c" varStatus="status">
                             <tr>
-                                <td><img src="/carousel_upload/${c.title}.jpg" width="120px"></td>
+                                <td><img src="${pageContext.request.contextPath}/pdfjs/web/carousel_upload/${c.path}" width="120px"></td>
                                 <td>${c.title}</td>
                                 <td>
                                     <a onclick="editCarousel(${c.id})" data-toggle="modal" data-target="#editCarouselModal">
@@ -298,7 +296,7 @@
 <div class="modal fade" id="editCarouselModal" tabindex="-1" role="dialog" aria-labelledby="editCarouselModalTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form method="get" action="/admin/update_carousel">
+            <form method="get" action="${pageContext.request.contextPath}/admin/update_carousel">
                 <div class="modal-header">
                     <h3 class="modal-title" id="editCarouseloModalTitle" style="text-align: center; font-weight: bolder">编辑轮播图</h3>
                 </div>
@@ -307,6 +305,8 @@
                     <div class="form-group">
                         <label for="carousel-title" class="col-form-label" style="font-size: large">标题：</label>
                         <input type="text" class="form-control" name="carousel-title" id="carousel-title">
+                        <label for="carousel-pic" class="col-form-label" style="font-size: large">图片：</label>
+                        <img id="carousel-pic" src="" alt="图片" style="width: 50px; height: auto"/>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -321,7 +321,7 @@
 <div class="modal fade" id="addCarouselModal" tabindex="-1" role="dialog" aria-labelledby="addCarouselModalTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form role="form" method="post" style="font-size: 18px" action="/admin/add_carousel" enctype="multipart/form-data">
+            <form role="form" method="post" style="font-size: 18px" action="${pageContext.request.contextPath}/admin/add_carousel" enctype="multipart/form-data">
                 <div class="modal-header">
                     <h3 class="modal-title" id="editCarouselTitle" style="text-align: center; font-weight: bolder">新增轮播图</h3>
                 </div>
@@ -346,7 +346,7 @@
 <div class="modal fade" id="deleteCarouselModal" tabindex="-1" role="dialog" aria-labelledby="deleteCarouselTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form method="get" action="/admin/delete_carousel">
+            <form method="get" action="${pageContext.request.contextPath}/admin/delete_carousel">
                 <div class="modal-header">
                     <h2 class="modal-title" id="deleteCarouselModalTitle" style="font-weight: bolder">提醒</h2>
                     <input id="carousel-delete-id" type="hidden" name="carousel-delete-id">
@@ -367,9 +367,10 @@
 <script>
 
     function editCarousel(id) {
-        $.ajax({url:"/admin/edit_carousel?id=" + id, method:"get", contentType:"application/json", success:function (result) {
+        $.ajax({url:"${pageContext.request.contextPath}/admin/edit_carousel?id=" + id, method:"get", contentType:"application/json", success:function (result) {
                 $('#carousel-id').val(result.id);
                 $('#carousel-title').val(result.title);
+                $('#carousel-pic').setAttribute("src", "${pageContext.request.contextPath}/carousel_upload/" + result.patah);
             }});
     }
 

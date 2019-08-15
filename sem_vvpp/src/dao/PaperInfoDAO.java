@@ -126,7 +126,7 @@ public class PaperInfoDAO {
 
 		List<PaperInfo> beans = new ArrayList<PaperInfo>();
 
-		String sql = "select * from paper_info limit ?,?";
+		String sql = "select * from paper_info order by id desc limit ?,?";
 
 		try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
 

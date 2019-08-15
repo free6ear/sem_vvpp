@@ -48,8 +48,6 @@ public class indexServlet extends HttpServlet {
         List<Carousel> cs = carouselDAO.list();
 
         request.setAttribute("cs", cs);
-        String test = cs.toString();
-        System.out.println(test);
         request.setAttribute("pis", pis);
 
         request.getRequestDispatcher("/login.jsp").forward(request, response);

@@ -10,12 +10,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="./js/jquery/2.0.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/app.css">
-    <link href="./css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet"> 
+    <script src="${pageContext.request.contextPath}/js/jquery/2.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/app.css">
+    <link href="${pageContext.request.contextPath}/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
     <title>论文资讯</title>
-    <link rel="shortcut icon" href="./imgs/paper_icon.png">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/imgs/paper_icon.png">
     <style>
         .triangle2{
             border: 50px solid transparent;
@@ -107,15 +107,15 @@
     <div class="container-fluid" style="min-width: 1220px">
             <div class="row clearfix" style="height: 120px; margin-top: 9px">
                 <div class="col-xs-2 col-xs-offset-1">
-                    <a href="/index"><img src="./imgs/main_logo.png" style="margin-top: 18px; height: auto; width: 200px;" alt="东南汽车"></a>
+                    <a href="${pageContext.request.contextPath}/index"><img src="${pageContext.request.contextPath}/imgs/main_logo.png" style="margin-top: 18px; height: auto; width: 200px;" alt="东南汽车"></a>
                 </div>
                 <div class="col-xs-4 col-xs-offset-1" style="text-align: center; margin-top: 18px">
-                    <img src="./imgs/home_title.png" alt="论文资讯" style="margin-left: -15px;
+                    <img src="${pageContext.request.contextPath}/imgs/home_title.png" alt="论文资讯" style="margin-left: -15px;
 ">
                 </div>
             </div>
             
-        <div class="row clearfix" style="height: 800px">
+        <div class="row clearfix" style="min-height: 815px">
             <div class="col-xs-10 col-xs-offset-1">
                 <table class="table table-hover" style="margin-top: -22px">
                     <thead class="row" style="color: #cf000f; margin-top: 20px">
@@ -140,7 +140,7 @@
                                     String token = "web" + File.separator;
                                     request.setAttribute("token", token);
                                 %>
-                                <td><a href="./pdfjs/web/viewer.html?file=${fn:substring(pi.path, fn:indexOf(pi.path, token) + 4, fn:length(pi.path))}" target=_blank><font> ${pi.title}</font></a></td>
+                                <td><a href="${pageContext.request.contextPath}/pdfjs/web/viewer.html?file=/pdfjs/web/paper_and_info_upload/${pi.path}" target=_blank><font> ${pi.title}</font></a></td>
                                 <td>${pi.author}</td>
                                 <td>
                                     <fmt:formatDate pattern="yyyy-MM-dd" value="${pi.createDate}" />
@@ -209,9 +209,9 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" color="214,69,65" opacity='0.8' zIndex="-2" count="99" src="./js/canvas-nest.js"></script>
-    <script src="./pdfjs/build/pdf.js"></script>
-    <script src="./pdfjs/build/pdf.worker.js"></script>
+    <script type="text/javascript" color="214,69,65" opacity='0.8' zIndex="-2" count="99" src="${pageContext.request.contextPath}/js/canvas-nest.js"></script>
+    <script src="${pageContext.request.contextPath}/pdfjs/build/pdf.js"></script>
+    <script src="${pageContext.request.contextPath}/pdfjs/build/pdf.worker.js"></script>
     <script>
         $(function(){
             $("ul.pagination li.disabled a").click(function(){
