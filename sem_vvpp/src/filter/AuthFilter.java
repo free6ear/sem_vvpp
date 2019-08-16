@@ -37,7 +37,7 @@ public class AuthFilter implements Filter {
         String username = (String)request.getSession().getAttribute("username");
         if (null == username) {
             java.io.PrintWriter out = response.getWriter();
-            out.print("<script language='javascript'>alert('请先登录！');window.location.href='../index';</script>");
+            out.print("<script language='javascript'>alert('请先登录！');window.location.href='" + request.getContextPath() + "/index';</script>");
             return;
         }
 

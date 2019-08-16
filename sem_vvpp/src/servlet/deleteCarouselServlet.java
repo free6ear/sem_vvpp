@@ -13,8 +13,14 @@ import java.io.File;
 @WebServlet(name = "deleteCarouselServlet", urlPatterns = {"/admin/delete_carousel"})
 public class deleteCarouselServlet extends HttpServlet {
 
+    private static final String UPLOAD_DIRECTORY = "carousel_upload";
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     {
+
+        String uploadPath = request.getServletContext().getRealPath("/");
+
+        File uploadFilePath = new File(uploadPath + "/pdfjs/web/" + UPLOAD_DIRECTORY);
 
         int id = Integer.parseInt(request.getParameter("carousel-delete-id"));
         Carousel carousel = CarouselDAO.get(id);
@@ -22,7 +28,6 @@ public class deleteCarouselServlet extends HttpServlet {
         carouselDAO.delete(id);
 
         try {
-            File file = new File(carousel.getPath());
             response.sendRedirect(request.getContextPath() + "/admin/carousel");
         } catch (Exception e) {
             e.printStackTrace();

@@ -240,8 +240,8 @@
                                     <b style="font-size: 21px; color: #cf000f">论文资讯</b>
                                 </p>
                             </a>
-                            <a data-toggle="modal" data-target="#addCarouselModal" data-toggle="tooltip" data-placement="bottom">
-                                <button class="btn btn-danger pull-right">新增</button>
+                            <a data-toggle="modal" data-target="#addPaperInfoModal" data-toggle="tooltip" data-placement="bottom">
+                                <button class="btn btn-danger pull-left" style="margin-left: 47px">新增</button>
                             </a>
                         </li>
                         <li class="list">
@@ -270,7 +270,7 @@
                             <a>欢迎你， <span class="badge" style="position:initial"><%=username %></span></a>
                         </li>
                         <li>
-                            <a href="logout"><span class="glyphicon glyphicon-log-out" style="margin-top: 4px"></span>注销</a>
+                            <a href="${pageContext.request.contextPath}/admin/logout"><span class="glyphicon glyphicon-log-out" style="margin-top: 4px"></span>注销</a>
                         </li>
                     </ul>
                 </div>
@@ -278,7 +278,7 @@
             <div class="row">
                 <div class="tab-content">
                     <!--论文资讯管理-->
-                    <div class="col-xs-12" id="editPaperContent">
+                    <div class="col-xs-12" id="editPaperContent" style="min-height: 600px">
                         <table class="table table-hover" style="margin-top: -17px; margin-bottom: 12px">
                             <thead class="row" style="color: #cf000f; margin-top: 20px; margin-bottom: -10px">
                                 <th class="col-xs-1" style="text-align: center">序号</th>
@@ -428,11 +428,14 @@
                         <div class="form-group" style="margin-top: 15px">
                             <label>文件：</label>
                             <input id="input-paper" name="paperOrInfoFile" type="file" data-show-caption="true">
+                            <div class="pull-right" style="color: #cf000f; margin-top: -25px">
+                                <font class="errorMessage" id="noFileMessage" style="font-size: medium"></font>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                        <button type="submit" class="btn btn-danger" onclick="addPaperInfo()">保存</button>
+                        <button type="submit" id="uploadPaperInfoButton" class="btn btn-danger" onclick="addPaperInfo()">保存</button>
                     </div>
                 </form>
             </div>
@@ -462,6 +465,26 @@
     <script src="../js/app.js"></script>
 
     <script>
+        //判斷文件类型
+        $(document).ready(function () {
+            $("#uploadPaperInfoButton").click(function () {
+                var file = $("#input-paper").val();
+                if (file == "") {
+                    $("#noFileMessage").html("请选择文件！");
+                    return false
+                } else {
+                    //检验文件类型是否正确
+                    var exec = (/[.]/.exec(file)) ? /[^.]+$/.exec(file.toLowerCase()) : '';
+                    if (exec != "pdf") {
+                        $("#noFileMessage").html("请选择pdf格式文件！");
+                        return false;
+                    }
+                }
+                $('#addPaperInfoModal').modal('hide');
+                return true;
+            });
+        });
+
         $(function(){
             $("ul.pagination li.disabled a").click(function(){
                 return false;
@@ -488,10 +511,6 @@
 
         function updatePaperInfo() {
             $('#editPaperInfoModal').modal('hide');
-        }
-
-        function addPaperInfo() {
-            $('#addPaperInfoModal').modal('hide');
         }
 
         function getPaperInfoId(id) {

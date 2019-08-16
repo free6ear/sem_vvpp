@@ -218,7 +218,7 @@
 <div class="wrapper" style="min-width: 900px">
     <div  class="sidebar clearfix" style="position:fixed" data-color="red">
         <div class="logo">
-            <a class="simple-text" href="/admin/paper_info"><img src="../imgs/back_brand.png" alt="后台管理系统"></a>
+            <a class="simple-text" href="${pageContext.request.contextPath}/admin/paper_info"><img src="../imgs/back_brand.png" alt="后台管理系统"></a>
         </div>
         <div class="sidebar-wrapper">
             <ul class="nav" id="tab">
@@ -238,7 +238,7 @@
                         </p>
                     </a>
                     <a data-toggle="modal" data-target="#addCarouselModal" data-toggle="tooltip" data-placement="bottom">
-                        <button class="btn btn-danger pull-right">新增</button>
+                        <button class="btn btn-danger pull-left" style="margin-left: 47px">新增</button>
                     </a>
                 </li>
             </ul>
@@ -259,7 +259,7 @@
                         <a>欢迎你， <span class="badge" style="position:initial"><%=username %></span></a>
                     </li>
                     <li>
-                        <a href="logout"><span class="glyphicon glyphicon-log-out" style="margin-top: 4px"></span> 注销</a>
+                        <a href="${pageContext.request.contextPath}/admin/logout"><span class="glyphicon glyphicon-log-out" style="margin-top: 4px"></span> 注销</a>
                     </li>
                 </ul>
             </div>
@@ -333,11 +333,14 @@
                     <div class="form-group" style="margin-top: 15px">
                         <label>图片：</label>
                         <input id="input-carousel" name="carouselFile" type="file" data-show-caption="true">
+                        <div class="pull-right" style="color: #cf000f; margin-top: -25px">
+                            <font class="errorMessage" id="noFileMessage" style="font-size: medium"></font>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                    <button type="submit" class="btn btn-danger" onclick="addCarousel()">保存</button>
+                    <button type="submit" class="btn btn-danger" id="uploadCarouselInfoButton" onclick="addCarousel()">保存</button>
                 </div>
             </form>
         </div>
@@ -365,6 +368,25 @@
 <script src="../js/bootstrap/3.3.6/bootstrap.min.js"></script>
 <script src="../js/app.js"></script>
 <script>
+    //判斷图片类型
+    $(document).ready(function () {
+        $("#uploadCarouselInfoButton").click(function () {
+            var file = $("#input-carousel").val();
+            if (file == "") {
+                $("#noFileMessage").html("请选择图片！");
+                return false;
+            }
+            //  else {
+            //     //检验文件类型是否正确
+            //     var exec = (/[.]/.exec(file)) ? /[^.]+$/.exec(file.toLowerCase()) : '';
+            //     if (exec != "jpg" || exec != "png"|| exec != "bmp" || exec != "jpeg"|| exec != "gif"|| exec != "svg" || exec != "swf" || exec != "tiff" || exec != "psd") {
+            //         $("#noFileMessage").html("请选择正确的图片格式！");
+            //         return false;
+            //     }
+            $('#addCarouselModal').modal('hide');
+            return true;
+        });
+    });
 
     function editCarousel(id) {
         $.ajax({url:"${pageContext.request.contextPath}/admin/edit_carousel?id=" + id, method:"get", contentType:"application/json", success:function (result) {

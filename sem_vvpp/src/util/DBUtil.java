@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBUtil {
 
-	static String ip = "127.0.0.1";
+	static String ip = "101.132.71.186";
 	static int port = 3306;
 	static String database = "sem_vvpp";
 	static String encoding = "UTF-8";

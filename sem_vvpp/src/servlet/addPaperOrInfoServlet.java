@@ -38,7 +38,8 @@ public class addPaperOrInfoServlet extends HttpServlet {
 
         String uploadPath = request.getServletContext().getRealPath("/");
 
-        File uploadFilePath = new File(uploadPath + "/pdfjs/web/" + UPLOAD_DIRECTORY);
+
+        File uploadFilePath = new File(uploadPath ,  "../pdfjs/web/" + UPLOAD_DIRECTORY);
         if (!uploadFilePath.exists()) {
             uploadFilePath.mkdirs();
         }

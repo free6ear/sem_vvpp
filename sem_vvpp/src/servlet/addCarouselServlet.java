@@ -63,6 +63,6 @@ public class addCarouselServlet extends HttpServlet {
 
         java.io.PrintWriter out2 = response.getWriter();
 
-        out2.print("<script language='javascript'>alert('上传成功！');window.location.href=" + request.getContextPath() + "'/admin/carousel';</script>");
+        out2.print("<script language='javascript'>alert('上传成功！');window.location.href='" + request.getContextPath() + "/admin/carousel';</script>");
     }
 }

@@ -40,7 +40,7 @@ public class adminServlet extends HttpServlet {
         request.setAttribute("pis", pis);
         request.setAttribute("page", page);
 
-        request.getRequestDispatcher(request.getContextPath() + "/paper_info.jsp").forward(request,response);
+        request.getRequestDispatcher("/admin/paper_info.jsp").forward(request,response);
 
     }
 }

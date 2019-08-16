@@ -178,7 +178,7 @@
                         <!--内容管理员登录-->
                         <div class="card front" id="front"  hidden>
                             <div class="col-xs-8 col-xs-offset-2">
-                                <form class="form-horizontal" method="post" action="login" style="text-align:center; margin: -35px -100px; transform: translateY(32%)">
+                                <form class="form-horizontal" id="login-form-1" method="post" action="login" style="text-align:center; margin: -35px -100px; transform: translateY(32%)">
                                     <span class="heading">门户管理员登录</span>
                                     <div class="form-group">
                                         <i class="fa fa-user"></i>
@@ -194,7 +194,7 @@
                                     </div>
                                     <div class="form-group" id="login-switch">
                                         <button type="button" id="change1" class="btn-link pull-left">我是平台用户</button>
-                                        <button type="button" onclick="adminLogin()" id="login-button" class="btn btn-default" style="outline:none">登录</button>
+                                        <button type="button" onclick="adminLogin()" id="login-button" data-loading-text="Loading..." class="btn btn-default" style="outline:none">登录</button>
                                     </div>
                                 </form>
                             </div>
@@ -202,7 +202,7 @@
                         <!--普通用户登录-->
                         <div class="card back" id="back">
                             <div class="col-xs-8 col-xs-offset-2">
-                                <form class="form-horizontal" method="post" style="text-align:center; margin: -35px -100px; transform: translateY(32%)">
+                                <form class="form-horizontal" method="post" id="login-form-2" style="text-align:center; margin: -35px -100px; transform: translateY(32%)">
                                     <span class="heading">平台用户登录</span>
                                     <div class="form-group">
                                         <i class="fa fa-user"></i>
@@ -221,7 +221,7 @@
 <%--                                    </div>--%>
                                     <div class="form-group" id="login-switch2s">
                                         <button type="button" id="change2"  class="btn-link pull-left">我是门户管理员</button>
-                                        <button type="button" onclick="normalLogin()" id="login-button2" class="btn btn-default" style="outline:none">登录</button>
+                                        <button type="button" onclick="normalLogin()" data-loading-text="Loading..." id="login-button2" class="btn btn-default" style="outline:none">登录</button>
                                     </div>
                                 </form>
                             </div>
@@ -257,7 +257,7 @@
                                 <c:when test="${pi.type == '论文'}">
                                     <tr>
                                         <td>
-                                            <font size="4">&nbsp;${pi.author} 于 <fmt:formatDate pattern="yyyy年M月d日" value="${pi.createDate}" /> 发表了<a href="./pdfjs/web/viewer.html?file=/pdfjs/web/paper_and_info_upload/${pi.path}" target=_blank>《${pi.title}》</a></font>
+                                            <font size="4">&nbsp;${pi.author} 于 <fmt:formatDate pattern="yyyy年M月d日" value="${pi.createDate}" /> 发表了<a href="${pageContext.request.contextPath}/pdfjs/web/viewer.html?file=/pdfjs/web/paper_and_info_upload/${pi.path}" target=_blank>《${pi.title}》</a></font>
                                             <button type="button" class="btn disabled btn-danger btn-xs" style="margin-top: -5px">论文</button>
                                         </td>
                                     </tr>
@@ -269,10 +269,40 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="loginLoadingModal" tabindex="-1" role="dialog" aria-labelledby="loginLoadingTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="deleteCarouselModalTitle" style="font-weight: bolder">登录中，请稍后...</h4>
+                    </div>
+                    <div class="modal-body" style="text-align: center">
+                        <button class="btn btn-primary" disabled>
+                            <span class="spinner-border spinner-border-sm"></span>
+                            Loading..
+                        </button>
+                    </div>
+        </div>
+    </div>
     <script type="text/javascript" color="214,69,65" opacity='1' zIndex="-2" count="99" src="./js/canvas-nest.js"></script>
     <script src="${pageContext.request.contextPath}/pdfjs/build/pdf.js"></script>
     <script src="${pageContext.request.contextPath}/pdfjs/build/pdf.worker.js"></script>
     <script>
+        $(function() {
+            $("#login-button").click(function(){
+                $(this).button('loading').delay(1000).queue(function() {
+                    // $(this).button('reset');
+                    // $(this).dequeue();
+                });
+            });
+        });
+        $(function() {
+            $("#login-button2").click(function(){
+                $(this).button('loading').delay(1000).queue(function() {
+                    // $(this).button('reset');
+                    // $(this).dequeue();
+                });
+            });
+        });
         function normalLogin() {
             var username = $('#inputEmail2').val();
             var password = $('#inputPassword2').val();
@@ -315,9 +345,10 @@
             }
             return true;
         });
-        $("form.form-horizontal input").keyup(function(){
+        $("#login-form-1 input").keyup(function(){
             $("div#loginErrorMessageDiv").hide();
             $("font.errorMessage").empty();
+            $("#login-button").button('reset');
         });
 
         $("form.form-horizontal").submit(function(){
@@ -327,9 +358,10 @@
             }
             return true;
         });
-        $("form.form-horizontal input").keyup(function(){
+        $("#login-form-2 input").keyup(function(){
             $("div#loginErrorMessageDiv").hide();
             $("font.errorMessage").empty();
+            $("#login-button2").button('reset');
         });
 
         $(function () {
