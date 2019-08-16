@@ -265,7 +265,6 @@
             </div>
         </nav>
         <div class="row">
-
             <div class="tab-content">
                 <!--编辑轮播图-->
                 <div class="col-xs-12" id="editCarouselContent">
@@ -273,7 +272,7 @@
                         <tbody style="margin-top: -5px">
                         <c:forEach items="${cs}" var = "c" varStatus="status">
                             <tr>
-                                <td><img src="${pageContext.request.contextPath}/pdfjs/web/carousel_upload/${c.path}" width="120px"></td>
+                                <td><img src="/pdfjs/web/carousel_upload/${c.path}" width="120px"></td>
                                 <td>${c.title}</td>
                                 <td>
                                     <a onclick="editCarousel(${c.id})" data-toggle="modal" data-target="#editCarouselModal">
@@ -305,8 +304,8 @@
                     <div class="form-group">
                         <label for="carousel-title" class="col-form-label" style="font-size: large">标题：</label>
                         <input type="text" class="form-control" name="carousel-title" id="carousel-title">
-                        <label for="carousel-pic" class="col-form-label" style="font-size: large">图片：</label>
-                        <img id="carousel-pic" src="" alt="图片" style="width: 50px; height: auto"/>
+<%--                        <label for="carousel-pic" class="col-form-label" style="font-size: large">图片：</label>--%>
+<%--                        <input id="carousel-pic" name="editCarouselFile" type="file" data-show-caption="true">--%>
                     </div>
                 </div>
                 <div class="modal-footer">

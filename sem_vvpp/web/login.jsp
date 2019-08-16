@@ -153,7 +153,7 @@
         </div>
         <!--Body-->
         <div class="row clearfix bg-primary" style="height: 511px; overflow: hidden">
-            <div class="col-xs-6" style="min-height: 511px; height: 511px">
+            <div class="col-xs-6" style="height: 511px">
                 <!--Carousel model-->
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
@@ -381,8 +381,8 @@
             <c:forEach items="${cs}" var="c" varStatus="status">
                 <c:if test="${status.index == 0}">
                     $('#carousel').append(
-                        "<div class='item active'>" +
-                        "<img src='${pageContext.request.contextPath}/pdfjs/web/carousel_upload/${c.path}' alt='test' style='width: 50vw'>" +
+                        "<div class='item active' style='height: 511px'>" +
+                        "<img src='/pdfjs/web/carousel_upload/${c.path}' style='width: 50vw; height: 100%'>" +
                         "<div class='carousel-caption'>" +
                         "<h1><b>${c.title}</b></h1>" +
                         "</div>" +
@@ -391,8 +391,8 @@
                 </c:if>
                 <c:if test="${status.index != 0}">
                 $('#carousel').append(
-                    "<div class='item'>" +
-                    "<img src='${pageContext.request.contextPath}/pdfjs/web/carousel_upload/${c.path}' alt='test' style='width: 50vw；height: 300px'>" +
+                    "<div class='item' style='height: 511px'>" +
+                    "<img src='/pdfjs/web/carousel_upload/${c.path}' style='width: 50vw; height: 100%'>" +
                     "<div class='carousel-caption'>" +
                     "<h1><b>${c.title}</b></h1>" +
                     "</div>" +
